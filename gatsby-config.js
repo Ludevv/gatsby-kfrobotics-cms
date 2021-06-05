@@ -1,22 +1,36 @@
+require("dotenv").config();
+
 module.exports = {
   siteMetadata: {
     title: "gatsby-kfrobotics",
   },
   plugins: [
     {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: "K.F. Robotics",
+        short_name: "KFRobotics",
+        start_url: "/",
+        background_color: "#f7f0eb",
+        theme_color: "#a2466c",
+        display: "standalone",
+        icon: "src/images/gatsby-icon.png",
+      },
+    },
+    {
       resolve: "gatsby-source-datocms",
       options: {
-        apiToken: "0afd9bb1cffcd1beb0c444caa8e101",
+        apiToken: process.env.API_DATO_CMS,
       },
     },
     "gatsby-plugin-styled-components",
     "gatsby-plugin-image",
-    {
-      resolve: "gatsby-plugin-google-analytics",
-      options: {
-        trackingId: "",
-      },
-    },
+    // {
+    //   resolve: "gatsby-plugin-google-analytics",
+    //   options: {
+    //     trackingId: "",
+    //   },
+    // },
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
