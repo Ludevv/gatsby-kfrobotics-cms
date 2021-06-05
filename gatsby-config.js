@@ -14,7 +14,15 @@ module.exports = {
         background_color: "#f7f0eb",
         theme_color: "#a2466c",
         display: "standalone",
-        icon: "src/images/gatsby-icon.png",
+        icon: "src/images/logo.png",
+      },
+    },
+    {
+      resolve: "gatsby-plugin-web-font-loader",
+      options: {
+        google: {
+          families: ["Rubik", "Roboto", "Audiowide"],
+        },
       },
     },
     {
@@ -25,6 +33,7 @@ module.exports = {
     },
     "gatsby-plugin-styled-components",
     "gatsby-plugin-image",
+    "gatsby-plugin-layout",
     // {
     //   resolve: "gatsby-plugin-google-analytics",
     //   options: {
