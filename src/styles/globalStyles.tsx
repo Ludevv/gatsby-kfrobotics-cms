@@ -14,10 +14,9 @@ export const GlobalStyle = createGlobalStyle`
 
     body {
         margin: 0;
-        padding: 125px 85px;
+        padding: 125px 0 0;
         font-family: 'Roboto';
-        height: 200vh;
-        background-color: #ddd;
+        /* background-color: #ddd; */
     }
 
     button {

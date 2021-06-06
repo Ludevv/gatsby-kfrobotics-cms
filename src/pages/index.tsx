@@ -13,6 +13,20 @@ const IndexPage = () => {
         placeholder="tracedSVG"
         quality={100}
       />
+      <StaticImage
+        src="../images/render.png"
+        width={600}
+        alt="render"
+        placeholder="tracedSVG"
+        quality={100}
+      />
+      <StaticImage
+        src="../images/render.png"
+        width={600}
+        alt="render"
+        placeholder="tracedSVG"
+        quality={100}
+      />
     </main>
   );
 };

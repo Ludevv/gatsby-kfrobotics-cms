@@ -1,10 +1,10 @@
 import * as React from "react";
 import { Link } from 'gatsby';
 import styled from "styled-components";
-import { StaticImage } from "gatsby-plugin-image";
 import { FaCaretDown } from "@react-icons/all-files/fa/FaCaretDown";
 import { AiOutlineAlignRight } from "@react-icons/all-files/Ai/AiOutlineAlignRight";
 import { useEffect, useState } from "react";
+
 
 export interface NavProps {
   background: Boolean;
@@ -32,8 +32,9 @@ const StyledLink = styled(props => <Link {...props} />)`
 `;
 
 const StyledBoxLogo = styled.div`
+	display: flex;
 	margin-left: 85px;
-	margin-top: 15px;
+	margin-top: 0;
 
 	@media (max-width: 1235px) {
 		margin-left: 35px;
@@ -48,7 +49,7 @@ const StyledComapnyName = styled.h1`
 	margin: 0 0 0 15px;
 	font-family: "Audiowide";
 	font-size: 38px;
-	line-height: 50px;
+	line-height: 80px;
 
 	@media (max-width: 500px) {
 		font-size: 29px !important;
@@ -86,7 +87,7 @@ const StyledButton = styled.span`
 		text-align: center;
 		margin: 0;
 		padding-bottom: 35px;
-		font-family: "Roboto Slab";
+		font-family: "Roboto";
 		font-size: 35px;
 		font-weight: 700;
 
@@ -158,7 +159,7 @@ const StyledOrderButton = styled.span`
 		border-radius: 15px;
 		font-size: 35px;
 		font-weight: 700;
-		font-family: "Roboto Slab";
+		font-family: "Roboto";
 	}
 
 	@media (max-width: 550px) {
@@ -202,6 +203,14 @@ const StyledMobileNav = styled.div`
   	}
 `;
 
+const StyledImage = styled.div`
+	height: 50px;
+	width: 50px;
+	margin-top: 15px;
+	border-radius: 50%;
+	background-color: ${(props: NavProps) => props.background ? "black" : "gold"};
+`;
+
 export interface NavigationProps {}
  
 const Navigation: React.SFC<NavigationProps> = () => {
@@ -238,13 +247,7 @@ const Navigation: React.SFC<NavigationProps> = () => {
     <StyledNavigationBar background={isMobile}>
 		<StyledLink to="/" onClick={handleHideOptions}>
 			<StyledBoxLogo>
-				<StaticImage
-					src="../images/logo.png"
-					width={50}
-					alt="logo"
-					placeholder="tracedSVG"
-					quality={100}
-				/>
+				<StyledImage background={isMobile}/>
 			<StyledComapnyName>K.F. Robotics</StyledComapnyName>
 			</StyledBoxLogo>
 		</StyledLink>
