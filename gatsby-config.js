@@ -21,7 +21,7 @@ module.exports = {
       resolve: "gatsby-plugin-web-font-loader",
       options: {
         google: {
-          families: ["Rubik", "Roboto", "Audiowide"],
+          families: ["Rubik", "Roboto", "Audiowide", "Roboto Slab"],
         },
       },
     },

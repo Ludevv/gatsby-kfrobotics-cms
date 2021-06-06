@@ -1,11 +1,14 @@
 import * as React from "react";
 import { Link } from 'gatsby';
-import styled from 'styled-components';
+import styled from "styled-components";
 import { StaticImage } from "gatsby-plugin-image";
 import { FaCaretDown } from "@react-icons/all-files/fa/FaCaretDown";
 import { AiOutlineAlignRight } from "@react-icons/all-files/Ai/AiOutlineAlignRight";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
+export interface NavProps {
+  background: Boolean;
+}
 
 const StyledNavigationBar = styled.nav`
 	position: fixed;
@@ -16,7 +19,7 @@ const StyledNavigationBar = styled.nav`
 	display: flex;
 	flex-grow: 0;
 	justify-content: space-between;
-	background-color: rgba(255, 255, 255, 0.7);
+	background-color: ${(props: NavProps) => props.background ? "gold" : "rgba(255, 255, 255, 0.7)"};
  	backdrop-filter: blur(5px);
 	-webkit-backdrop-filter: blur(5px);
 	z-index: 10;
@@ -48,10 +51,10 @@ const StyledComapnyName = styled.h1`
 	line-height: 50px;
 
 	@media (max-width: 500px) {
-		font-size: 29px;
+		font-size: 29px !important;
   	}
-	@media (max-width: 380px) {
-		font-size: 23px;
+	@media (max-width: 374px) {
+		font-size: 23px !important;
   	}
 	@media (max-width: 330px) {
 		display: none;
@@ -83,7 +86,7 @@ const StyledButton = styled.span`
 		text-align: center;
 		margin: 0;
 		padding-bottom: 35px;
-		font-family: "Roboto";
+		font-family: "Roboto Slab";
 		font-size: 35px;
 		font-weight: 700;
 
@@ -108,9 +111,6 @@ const StyledDownButton = styled.span`
 	span:hover{
 		color: gold;
 	}
-
-
-	
 `;
 
 const StyledGerris = styled.div`
@@ -132,7 +132,7 @@ const StyledGerris = styled.div`
 		line-height: 45px;
 		&:hover {
 			color: gold;
-	}
+		}
 	}
 `;
 
@@ -158,11 +158,11 @@ const StyledOrderButton = styled.span`
 		border-radius: 15px;
 		font-size: 35px;
 		font-weight: 700;
-		font-family: "Roboto";
+		font-family: "Roboto Slab";
 	}
 
 	@media (max-width: 550px) {
-		margin: 0 20px
+		margin: 0 20px;
 	}
 	@media (max-width: 400px) {
 		font-size: 25px;
@@ -188,7 +188,7 @@ const StyledMobileMenu = styled(AiOutlineAlignRight)`
 `;
 
 const StyledMobileNav = styled.div`
-	position: absolute;
+	position: fixed;
 	top: 80px;
 	height: 100vh;
 	right: 0;
@@ -224,10 +224,18 @@ const Navigation: React.SFC<NavigationProps> = () => {
 		setIsMobile(false);
 	}
 
-	
+	useEffect(()=>{
+		function updateSize() {
+			if(window.innerWidth > 1235) {
+				setIsMobile(false);
+			}
+    	}
+		window.addEventListener('resize', updateSize);
+		updateSize();
+	})
 
   return ( 
-    <StyledNavigationBar>
+    <StyledNavigationBar background={isMobile}>
 		<StyledLink to="/" onClick={handleHideOptions}>
 			<StyledBoxLogo>
 				<StaticImage
