@@ -204,9 +204,9 @@ const StyledMobileNav = styled.div`
 `;
 
 const StyledImage = styled.div`
-	height: 50px;
-	width: 50px;
-	margin-top: 15px;
+	height: 40px;
+	width: 40px;
+	margin-top: 20px;
 	border-radius: 50%;
 	background-color: ${(props: NavProps) => props.background ? "black" : "gold"};
 `;

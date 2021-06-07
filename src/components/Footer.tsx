@@ -9,22 +9,26 @@ const FooterBox = styled.div`
   color: #c9c9c9;
   span {
     display: block;
-    /* border-top: 2px solid #7d7d7d; */
+    border-top: 2px solid #7d7d7d;
     margin: 0 85px;
     line-height: 35px;
   }
 
   @media (max-width: 430px) {
     font-size: 12px;
+    span {
+      margin: 0 20px;
+    }
+    
   }
   @media (max-width: 380px) {
-    font-size: 11px;
-  }
-  @media (max-width: 350px) {
     font-size: 10px;
   }
+  @media (max-width: 350px) {
+    font-size: 9px;
+  }
   @media (max-width: 320px) {
-    font-size: 8px;
+    font-size: 9px;
   }
 `;
 

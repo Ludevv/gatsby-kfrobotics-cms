@@ -1,7 +1,7 @@
 import { StaticImage } from 'gatsby-plugin-image';
 import * as React from 'react';
 import styled from 'styled-components';
-import Form from './Form';
+
 import { Link } from 'gatsby';
 import { MdEmail } from "@react-icons/all-files/Md/MdEmail";
 import { ImPhone } from "@react-icons/all-files/Im/ImPhone";
@@ -14,18 +14,21 @@ const AboutBox = styled.div`
 	display: flex;
 	justify-content: center;
 	width: 100%;
-	padding: 24px 85px;
+	padding: 24px 85px 35px;
 	margin: 0 auto;
 	background-color: #202020;
 	color: white;
+
+	@media(max-width: 980px) {
+		flex-direction: column;
+		padding: 15px 20px 25px;
+	}
 `;
 
-const StyledForm = styled(Form)`
-	width: 40%;
-`;
 
-const StyledContent = styled.div`
-	width: 20%;
+
+const StyledCompany = styled.div`
+	width: 240px;
 	font-family: Rubik;
 	font-weight: 200;
 	
@@ -36,6 +39,64 @@ const StyledContent = styled.div`
 		font-size: 15px;
 		font-weight: 200;
 		color: #c9c9c9;
+
+		@media(max-width: 980px) {
+			margin-top: 5px;
+			margin-bottom: 10px;
+		}
+	}
+	
+	p {
+		color: #7d7d7d;
+		font-size: 15px;
+		font-weight: 200;
+		margin: 9px 0;
+
+
+		&:nth-of-type(4) {
+			margin-top: 40px;
+			margin-bottom: 5px;
+
+			@media(max-width: 980px) {
+				margin-top: 25px;
+				margin-bottom: 5px;
+			}
+		}
+		&:nth-of-type(5) {
+			margin-top: 0;
+		}
+	}
+
+	a {
+		color: #7d7d7d;
+		font-size: 15px;
+		font-weight: 200;
+		text-decoration: none;
+
+		&:hover {
+			color: #c9c9c9;
+			text-decoration: underline;
+		}
+	}
+`;
+
+const StyledMedia = styled.div`
+	width: 180px;
+	font-family: Rubik;
+	font-weight: 200;
+	
+	h3 {
+		text-transform: uppercase;
+		margin-top: 29px;
+		margin-bottom: 25px;
+		font-size: 15px;
+		font-weight: 200;
+		color: #c9c9c9;
+
+		@media(max-width: 980px) {
+			margin-top: 25px;
+			margin-bottom: 12px;
+		}
 	}
 	
 	p {
@@ -64,12 +125,87 @@ const StyledContent = styled.div`
 		}
 	}
 `;
+const StyledSiteMap = styled.div`
+	width: 210px;
+	font-family: Rubik;
+	font-weight: 200;
+	
+	h3 {
+		text-transform: uppercase;
+		margin-top: 29px;
+		margin-bottom: 25px;
+		font-size: 15px;
+		font-weight: 200;
+		color: #c9c9c9;
 
-const StyledMdEmail = styled(MdEmail)`
-font-size: 16px;
-transform: translateY(20%);
-margin-right: 8px;
+		
+		@media(max-width: 980px) {
+			margin-top: 15px;
+			margin-bottom: 10px;
+		}
+	}
+	
+	p {
+		display: inline-block;
+		color: #7d7d7d;
+		font-size: 15px;
+		font-weight: 200;
+		margin: 9px 0;
+
+		&:nth-of-type(3) {
+			margin-bottom: 5px;
+		}
+		&:nth-of-type(4) {
+			margin-top: 0;
+		}
+	}
+
+	a {
+		color: #7d7d7d;
+		font-size: 15px;
+		font-weight: 200;
+		text-decoration: none;
+
+		&:hover {
+			color: #c9c9c9;
+			text-decoration: underline;
+		}
+	}
 `;
+
+const StyledLogo = styled.div`
+	width: 330px;
+
+	@media(max-width: 980px) {
+		margin-top: 10px;
+			width: 100%;
+	}
+
+	h1 {
+		display: flex;
+		margin: 0 0 0 15px;
+		font-family: "Audiowide";
+		font-size: 36px;
+		line-height: 70px;
+		color: #c9c9c9;
+
+		@media(max-width: 980px) {
+			font-size: 27px;
+			margin: 0;
+		}
+	}
+`;
+
+const StyledCircle = styled.div`
+	display: inline-block;
+	height: 36px;
+	width: 36px;
+	margin-top: 17px;
+	margin-right: 15px;
+	border-radius: 50%;
+	background-color: gold;
+`;
+
 
 const StyledImPhone = styled(ImPhone)`
 font-size: 16px;
@@ -116,20 +252,20 @@ export interface AboutProps {}
 const About: React.SFC<AboutProps> = () => {
   return ( 
 	  <AboutBox>
-		 <StyledContent>
+		 <StyledCompany>
 			 <h3>siedziba:</h3>
 			 <p>ul. Rezedowa 60</p>
 			 <p>54-515 Wrocław</p>
 			 <p>Polska</p>
-			 <p><a href="mailto:r.g.kowalczyk@gmail.com"><StyledMdEmail/>r.g.kowalczyk@gmail.com</a></p>
+			 <p>Numer telefonu:</p>
 			 <p><a href="tel:601989908"><StyledImPhone/>+48 601 989 908</a></p>
-		 </StyledContent>
-		 <StyledContent>
+		 </StyledCompany>
+		 <StyledMedia>
 			 <h3>znajdź nas:</h3>
 			 <a href="https://www.facebook.com/GerrisUSV"><StyledIoLogoFacebook/></a>
 			 <a href="https://www.instagram.com/gerris_usv/"><StyledIoLogoInstagram/></a>
-		 </StyledContent>
-		 <StyledContent>
+		 </StyledMedia>
+		 <StyledSiteMap>
 			 <h3>mapa strony:</h3>
 			 <StyledLink to="/"><p><StyledMdKeyboardArrowRight/> Strona Główna</p></StyledLink>
 			 <StyledLink to="/articles"><p><StyledMdKeyboardArrowRight/> Artykuły</p></StyledLink>
@@ -137,10 +273,11 @@ const About: React.SFC<AboutProps> = () => {
 			 <StyledLink to="/gerris-asv-surveyor"><p><StyledMdKeyboardArrowRight/> Gerris ASV Surveyor</p></StyledLink>
 			 <StyledLink to="/gerris-1100-asv"><p><StyledMdKeyboardArrowRight/> Gerris 1100 ASV</p></StyledLink>
 			 <StyledLink to="/contact"><p><StyledMdKeyboardArrowRight/> Kontakt</p></StyledLink>
-		 </StyledContent>
+		 </StyledSiteMap>
+		 <StyledLogo><h1><StyledCircle/>K.F.&nbsp;Robotics</h1></StyledLogo>
 
 
-			<StyledForm/>
+			
 	  </AboutBox>
    );
 }
