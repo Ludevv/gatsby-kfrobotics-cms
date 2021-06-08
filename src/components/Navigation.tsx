@@ -171,7 +171,7 @@ const StyledOrderButton = styled.span`
 `;
 
 const StyledFaCaretDown = styled(FaCaretDown)`
-	transform: translateY(10%);
+	transform: translateY(-15%);
 `;
 
 const StyledMobileMenu = styled(AiOutlineAlignRight)`

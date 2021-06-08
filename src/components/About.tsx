@@ -266,7 +266,7 @@ const About: React.SFC<AboutProps> = () => {
 			 <a href="https://www.instagram.com/gerris_usv/"><StyledIoLogoInstagram/></a>
 		 </StyledMedia>
 		 <StyledSiteMap>
-			 <h3>mapa strony:</h3>
+			 <h3>na skróty:</h3>
 			 <StyledLink to="/"><p><StyledMdKeyboardArrowRight/> Strona Główna</p></StyledLink>
 			 <StyledLink to="/articles"><p><StyledMdKeyboardArrowRight/> Artykuły</p></StyledLink>
 			 <StyledLink to="//gerris-asv"><p><StyledMdKeyboardArrowRight/> Gerris ASV</p></StyledLink>

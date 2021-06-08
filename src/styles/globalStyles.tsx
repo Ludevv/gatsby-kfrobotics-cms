@@ -1,4 +1,6 @@
 import { createGlobalStyle } from "styled-components";
+import 'bootstrap-css-only/css/bootstrap.min.css';
+
 
 export const GlobalStyle = createGlobalStyle`
     html {
@@ -16,7 +18,7 @@ export const GlobalStyle = createGlobalStyle`
         margin: 0;
         padding: 125px 0 0;
         font-family: 'Roboto';
-        /* background-color: #ddd; */
+  
     }
 
     button {
@@ -29,5 +31,10 @@ export const GlobalStyle = createGlobalStyle`
         padding: 0;
         margin: 0;
         list-style: none;
+    }
+
+    a:hover {
+        color: black;
+        text-decoration: none;
     }
 `;

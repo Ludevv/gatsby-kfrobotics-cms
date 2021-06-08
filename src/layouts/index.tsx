@@ -5,8 +5,9 @@ import Navigation from '../components/Navigation';
 import { GlobalStyle } from '../styles/globalStyles';
 import styled from 'styled-components';
 
+
 const Wrapper = styled.div`
-  padding: 0 85px;
+  padding: 0 300px;
 `;
 
 const MainLayout = ({children}) => (
