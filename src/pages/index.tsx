@@ -29,12 +29,21 @@ const StyledAbout = styled.div`
 	}
 
 	ul {
-		list-style: circle;
+		list-style: none;
 		margin-left: 20px;
 
 		li {
 			line-height: 1.8;
 			margin-bottom: 20px;
+		}
+
+		li::before {
+			content: "▪ ";
+			color: gold;
+			display: inline-block;
+			font-size: 22px;
+			margin-left: -20px;
+			margin-right: 10px;
 		}
 	}
 `;

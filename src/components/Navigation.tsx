@@ -148,6 +148,12 @@ const StyledOrderButton = styled.span`
 	box-shadow: rgba(255, 196, 0, 0.418) 0px 2px 8px 0px;
 	font-family: Rubik;
 	font-size: 18px;
+	letter-spacing: 2px;
+
+	&:hover {
+		color: white;
+		background-color: gold;
+	}
 
 	@media (max-width: 1235px) {
 		display: block;

@@ -1,5 +1,4 @@
 import * as React from 'react';
-import About from '../components/About';
 import Footer from '../components/Footer';
 import Navigation from '../components/Navigation';
 import { GlobalStyle } from '../styles/globalStyles';
@@ -7,7 +6,12 @@ import styled from 'styled-components';
 
 
 const Wrapper = styled.div`
-  padding: 0 300px;
+  margin: 0 140px;
+
+  @media (max-width: 1235px) {
+    /* margin: 0 50px;
+    background-color: red; */
+  }
 `;
 
 const MainLayout = ({children}) => (
@@ -17,7 +21,6 @@ const MainLayout = ({children}) => (
     <Wrapper>
         {children}
     </Wrapper>
-    <About/>
     <Footer/>
   </>
 )
