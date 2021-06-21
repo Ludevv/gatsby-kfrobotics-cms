@@ -1,10 +1,27 @@
 import * as React from "react";
+import Gerris from "../components/Gerris";
 
 export interface Gerris1100PageProps {}
  
 const Gerris1100Page: React.SFC<Gerris1100PageProps> = () => {
   return ( 
-    <div>Gerris1100</div>
+        <Gerris
+        title="Gerris 1100 ASV"
+        text1={
+          "Ciągły rozwój, optymalizacja procesu produkcji i doskonalenie konstrukcji doprowadziło nas do punktu, w którym tworzymy udoskonalonego Gerrisa ASV - Gerris ASV 1100. Praktyczniejszego, sprawniejszego i jeszcze bardziej niezawodnego."
+          }
+
+        text2={
+           "Projektujemy nowe pływaki o mniejszym współczynniku oporu dla wydłużenia czasu pracy na jednym ładowaniu. Tak jak jego poprzednik, również wykonany z wytrzymałego kompozytu epoksydowo-szklanego z wykorzystaniem technologii infuzji dla uzyskania najwyższej wytrzymałości przy najniższej możliwej masie elementu."
+          }
+
+        text3={ 
+           "Nowe osłony napędowe - wytrzymalsze i łatwiejsze w utrzymaniu. Łatwe dostosowanie różnego rodzaju napędów. Niezatapialność - cecha jaką może pochwalić się niewiele tego typu jednostek. Mamy świadomość, że sprzęt pomiarowy jest cenny, stąd chcemy mieć pewność, że “nie pójdzie on na dno”."
+          }
+        imgSrc1=""
+        imgSrc2=""
+        imgSrc3=""
+      />
    );
 }
 export default Gerris1100Page;

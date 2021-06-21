@@ -2,6 +2,7 @@ import { graphql } from "gatsby";
 import * as React from "react";
 import styled from "styled-components";
 import Title from "../components/Title";
+import { ImQuotesLeft } from "@react-icons/all-files/Im/ImQuotesLeft";
 
 export const query = graphql`
 query MyQuery {
@@ -34,12 +35,13 @@ const StyledArticleBox = styled.div`
   display: flex;
   border-bottom: 2px solid gold;
 
+
  
 
 `;
 
 const StyledArticleTitle = styled.h3`
-    color: grey;
+    color: #202020;
     font-size: 25px;
     margin-bottom: 15px;
 `;
@@ -62,6 +64,12 @@ const StyledArticlePhoto = styled.img`
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 `;
 
+const StyledImQuotesLeft = styled(ImQuotesLeft)`
+  font-size: 30px;
+  margin-right: 15px;
+  color: #202020;
+`;
+
 
 
 
@@ -75,7 +83,7 @@ const ArticlesPage: React.SFC<ArticlesPageProps> = ({data}) => {
       <StyledArticleBox>
         { article.photo && <StyledArticlePhoto src={article.photo.url}/> }
         <div>
-            <StyledArticleTitle>{article.title}</StyledArticleTitle>
+            <StyledArticleTitle><StyledImQuotesLeft/>{article.title}</StyledArticleTitle>
             <StyledArticleContent>{article.content}</StyledArticleContent>
             <StyledArticleDate>{article.date}</StyledArticleDate>
         </div>
