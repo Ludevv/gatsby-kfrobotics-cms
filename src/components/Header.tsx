@@ -10,7 +10,7 @@ const StyledMain = styled.main`
 	height: 80vh;
     display: flex;
     justify-content: center;
-    margin: 50px 0;
+    margin: 100px 0;
 `;
 const StyledName = styled.h1`
     flex-basis: 60%;
@@ -26,7 +26,7 @@ const StyledName = styled.h1`
 	}
 	
 	p {
-		width: 60%;
+		width: 50%;
 		font-size: 20px;
 		color: #000;
 		font-family: Roboto;
@@ -68,7 +68,7 @@ const Header: React.SFC<HeaderProps> = ({children}) => {
 		</StyledName>
 		<StaticImage
 			src="../images/render.png"
-			width={600}
+			width={800}
 			alt="render"
 			placeholder="tracedSVG"
 			quality={100}

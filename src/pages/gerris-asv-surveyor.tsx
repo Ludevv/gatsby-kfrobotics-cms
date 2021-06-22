@@ -1,10 +1,16 @@
+import { StaticImage } from "gatsby-plugin-image";
 import * as React from "react";
+import BoatInfo from "../components/BoatInfo";
 import Gerris from "../components/Gerris";
+import SetIncludesSurveyor from "../components/SetIncludesSurveyor";
+import Table from "../components/Table";
+import { StyledWrapImg } from "./gerris-asv";
 
 export interface GerrisSurveyorPageProps {}
  
 const GerrisSurveyorPage: React.SFC<GerrisSurveyorPageProps> = () => {
   return ( 
+    <>
     <Gerris
         title="Gerris ASV Surveyor"
         text1={
@@ -22,6 +28,36 @@ const GerrisSurveyorPage: React.SFC<GerrisSurveyorPageProps> = () => {
         imgSrc2="https://i.ibb.co/rxKznL0/g2two.jpg"
         imgSrc3="https://i.ibb.co/gmnvf7B/g2three.jpg"
       />
+
+      <Table 
+        row1="1200 mm"
+        row2="1000 mm"
+        row3="320 mm"
+        row4="15 kg"
+        row5="15 kg"
+        row6="1,5 m/s"
+        row7="2 pędniki BR T200"
+        row8="poliwęglan"
+        row9="2x Li-ion 3S 36Ah lub 2x Li-ion 3S 72Ah"
+        row10="do 2h (@1,2 m/s z akumulatorem 36Ah)"
+        row11="kompozyt epoksydowo-szklany"
+        row12="ręczne lub autonomiczne"
+        row13="LED"
+      />
+      <BoatInfo/>
+      <SetIncludesSurveyor/>
+      <StyledWrapImg>
+        <StaticImage
+            src="../images/siderender.png"
+            width={1000}
+            alt="render"
+            placeholder="tracedSVG"
+            quality={100}
+            objectFit="contain"
+            objectPosition="0% 0%"
+        />
+      </StyledWrapImg>
+      </>
    );
 }
 export default GerrisSurveyorPage;

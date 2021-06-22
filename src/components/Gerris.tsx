@@ -20,34 +20,35 @@ export interface ImageProps {
 
 const float = keyframes`
   from {
-    transform: translate(-50%, -60%);
+    transform: translate(-50%, -57%);
   }
 
   to {
-    transform: translate(-50%, -40%);
+    transform: translate(-50%, -43%);
   }
 `;
 
 
 const StyledBoxOdd = styled.div`
     display: flex;
-    margin: 70px 0 ;
+    margin: 70px 0;
+    justify-content: center;
 `;
 
 const StyledTextOdd = styled.p`
     display: flex;
     align-items: center;
-    width: 60%;
+    width: 70%;
     font-size: 20px;
     font-family: Roboto;
-    padding-right: 100px;
+    padding-right: 120px;
     line-height: 1.8;
 `;
 
 const StyledBackgroundOdd = styled.div`
     position: relative;
-    width: 400px;
-    height: 400px;
+    width: 450px;
+    height: 350px;
     background-image: url(${(props: ImageProps) => props.path});
     background-position: center;
     background-size: cover;
@@ -70,11 +71,11 @@ const StyledBackgroundOdd = styled.div`
 const StyledImageOdd = styled.div`
     position: absolute;
     top: 50%;
-    left: 25%;
+    left: 30%;
     transform: translate(-50%, -50%);
     z-index: 2;
-    width: 350px;
-    height: 250px;
+    width: 380px;
+    height: 280px;
     background-image: url(${(props: ImageProps) => props.path});
     background-position: center;
     background-size: cover;
@@ -85,22 +86,23 @@ const StyledImageOdd = styled.div`
 const StyledBoxEven = styled.div`
     display: flex;
     margin-bottom: 70px;
+    justify-content: center;
 `;
 
 const StyledTextEven = styled.p`
     display: flex;
     align-items: center;
-    width: 60%;
+    width: 70%;
     font-size: 20px;
     font-family: Roboto;
-    padding-left: 100px;
+    padding-left: 120px;
     line-height: 1.8;
 `;
 
 const StyledBackgroundEven = styled.div`
     position: relative;
-    width: 400px;
-    height: 400px;
+    width: 450px;
+    height: 350px;
     background-image: url(${(props: ImageProps) => props.path});
     background-position: center;
     background-size: cover;
@@ -122,11 +124,11 @@ const StyledBackgroundEven = styled.div`
 const StyledImageEven = styled.div`
     position: absolute;
     top: 50%;
-    left: 75%;
+    left: 70%;
     transform: translate(-50%, -50%);
     z-index: 2;
-    width: 350px;
-    height: 250px;
+    width: 380px;
+    height: 280px;
     background-image: url(${(props: ImageProps) => props.path});
     background-position: center;
     background-size: cover;

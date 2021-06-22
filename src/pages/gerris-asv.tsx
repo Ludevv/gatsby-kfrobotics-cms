@@ -1,10 +1,22 @@
+import { StaticImage } from "gatsby-plugin-image";
 import * as React from "react";
+import BoatInfo from "../components/BoatInfo";
 import Gerris from "../components/Gerris";
+import SetIncludes from "../components/SetIncludes";
+import Table from "../components/Table";
+import styled from 'styled-components';
 
 export interface GerrisPageProps {}
+
+export const StyledWrapImg = styled.div`
+    width: 100%;
+    display: flex;
+    justify-content: center;
+`;
  
 const GerrisPage: React.SFC<GerrisPageProps> = () => {
   return ( 
+    <>
     <Gerris
         title={"Gerris ASV"}
         text1={ 
@@ -23,6 +35,35 @@ const GerrisPage: React.SFC<GerrisPageProps> = () => {
         imgSrc2="https://i.ibb.co/Xptg4fZ/g1one.jpg"
         imgSrc3="https://i.ibb.co/GcytYR6/g1three.jpg"
       />
+       <Table 
+        row1="1200 mm"
+        row2="1000 mm"
+        row3="320 mm"
+        row4="15 kg"
+        row5="15 kg"
+        row6="1,5 m/s"
+        row7="4 silniki bezszczotkowe"
+        row8="mosiężne"
+        row9="2x Li-ion 3S 36Ah lub 2x Li-ion 3S 72Ah"
+        row10="do 2h (@1,2 m/s z akumulatorem 36Ah)"
+        row11="kompozyt epoksydowo-szklany"
+        row12="ręczne lub autonomiczne"
+        row13="LED"
+      />
+      <BoatInfo/>
+      <SetIncludes/>
+      <StyledWrapImg>
+        <StaticImage
+            src="../images/siderender.png"
+            width={1000}
+            alt="render"
+            placeholder="tracedSVG"
+            quality={100}
+            objectFit="contain"
+            objectPosition="0% 0%"
+        />
+      </StyledWrapImg>
+      </>
    );
 }
 export default GerrisPage;
