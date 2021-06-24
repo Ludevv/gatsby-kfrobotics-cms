@@ -1,13 +1,10 @@
-
-
 .form__form {
   width: 100%;
-  max-width: 350px;
+  max-width: 400px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
- 
 }
 
 .form__item {
@@ -31,7 +28,7 @@ label {
   left: 0;
   transition: 0.2s ease-out all;
   font-size: 16px;
-   font-family: "Rubik";
+  font-family: "Rubik";
 }
 
 input,
@@ -42,13 +39,13 @@ textarea {
   line-height: 22px;
   width: 100%;
   background: none;
-   font-family: "Rubik";
+  font-family: "Rubik";
 }
 
 textarea {
   resize: none;
   min-height: 100px;
-   font-family: "Rubik";
+  font-family: "Rubik";
 }
 
 input:focus,
@@ -83,7 +80,8 @@ textarea:focus ~ .forms__item__bar {
   border: 2px solid gold;
   color: gold;
   box-shadow: rgba(255, 196, 0, 0.418) 0px 2px 8px 0px;
-	font-family: "Rubik";
+  font-family: "Rubik";
   text-transform: uppercase;
   margin-bottom: 20px;
+  letter-spacing: 1.5px;
 }

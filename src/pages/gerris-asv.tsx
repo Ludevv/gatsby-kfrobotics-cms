@@ -5,6 +5,9 @@ import Gerris from "../components/Gerris";
 import SetIncludes from "../components/SetIncludes";
 import Table from "../components/Table";
 import styled from 'styled-components';
+import gerrisOneImg from '../images/g1one.jpg';
+import gerrisTwoImg from '../images/g1two.jpg';
+import gerrisThreeImg from '../images/g1three.jpg';
 
 export interface GerrisPageProps {}
 
@@ -31,9 +34,9 @@ const GerrisPage: React.SFC<GerrisPageProps> = () => {
           "Przetestowaliśmy Gerris’a w najróżniejszych warunkach pogodowych i terenowych, aby mieć pewność, że te czynniki nie będą stanowiły przeszkody do jego pracy. Niestraszne mu są niskie i wysokie temperatury, piasek, żwir, roślinność oraz deszcz. Kadłub wykonany z kompozytu epoksydowo-szklanego cechuje się wysoką odpornością na uderzenia. Katamaran został od podstaw zaprojektowany w Polsce, a jego podzespoły wytwarzane są w naszym warsztacie. Dzięki temu możemy go dowolnie modyfikować."
          }
 
-        imgSrc1="https://i.ibb.co/XYJky9z/g1two.jpg"
-        imgSrc2="https://i.ibb.co/Xptg4fZ/g1one.jpg"
-        imgSrc3="https://i.ibb.co/GcytYR6/g1three.jpg"
+        imgSrc1={gerrisTwoImg}
+        imgSrc2={gerrisOneImg}
+        imgSrc3={gerrisThreeImg}
       />
        <Table 
         row1="1200 mm"

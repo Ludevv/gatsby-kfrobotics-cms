@@ -3,6 +3,9 @@ import styled from 'styled-components'
 import { MDBCarousel, MDBCarouselCaption, MDBCarouselInner, MDBCarouselItem, MDBView, MDBMask, MDBContainer } from
 "mdbreact";
 import { Link } from "gatsby";
+import carusel1 from '../images/carusel1.jpg';
+import carusel2 from '../images/carusel2.jpg';
+import carusel3 from '../images/carusel3.jpg';
 
 
 const StyledMDBContainer = styled(MDBContainer)`
@@ -45,7 +48,7 @@ const CarouselPage = () => {
           <MDBView>
             <img
               className="d-block w-100"
-              src="https://i.ibb.co/YXt1K9S/carusel1.jpg"
+              src={carusel1}
               alt="First slide"
             />
           <MDBMask overlay="black-light" />
@@ -59,7 +62,7 @@ const CarouselPage = () => {
           <MDBView>
             <img
               className="d-block w-100"
-              src="https://i.ibb.co/mqFsybJ/carusel2.jpg"
+              src={carusel2}
               alt="Second slide"
             />
           <MDBMask overlay="black-strong" />
@@ -73,7 +76,7 @@ const CarouselPage = () => {
           <MDBView>
             <img
               className="d-block w-100"
-              src="https://i.ibb.co/9GQXczr/carusel3.jpg"
+              src={carusel3}
               alt="Third slide"
             />
           <MDBMask overlay="black-slight" />

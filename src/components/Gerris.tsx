@@ -9,9 +9,9 @@ export interface GerrisProps {
     text1: string;
     text2: string;
     text3: string;
-    imgSrc1: string;
-    imgSrc2: string;
-    imgSrc3: string;
+    imgSrc1: any;
+    imgSrc2: any;
+    imgSrc3: any;
 }
 
 export interface ImageProps {

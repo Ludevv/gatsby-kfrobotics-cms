@@ -5,6 +5,9 @@ import Gerris from "../components/Gerris";
 import SetIncludes from "../components/SetIncludes";
 import Table from "../components/Table";
 import { StyledWrapImg } from "./gerris-asv";
+import gerrisOneImg from '../images/g2one.jpg';
+import gerrisTwoImg from '../images/g2two.jpg';
+import gerrisThreeImg from '../images/g2three.jpg';
 
 export interface Gerris1100PageProps {}
  
@@ -24,9 +27,10 @@ const Gerris1100Page: React.SFC<Gerris1100PageProps> = () => {
         text3={ 
            "Nowe osłony napędowe - wytrzymalsze i łatwiejsze w utrzymaniu. Łatwe dostosowanie różnego rodzaju napędów. Niezatapialność - cecha jaką może pochwalić się niewiele tego typu jednostek. Mamy świadomość, że sprzęt pomiarowy jest cenny, stąd chcemy mieć pewność, że “nie pójdzie on na dno”."
           }
-        imgSrc1=""
-        imgSrc2=""
-        imgSrc3=""
+
+        imgSrc1={gerrisTwoImg}
+        imgSrc2={gerrisOneImg}
+        imgSrc3={gerrisThreeImg}
       />
 
       <Table 

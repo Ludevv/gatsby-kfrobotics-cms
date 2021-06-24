@@ -19,7 +19,7 @@ export interface TableProps {
 
 const StyledTableBox = styled.div`
     width: 700px;
-    margin: 80px auto;
+    margin: 120px auto;
     border-bottom: 5px solid #202020;
     filter: drop-shadow(rgba(0, 0, 0, 0.35) 0px 5px 15px);
 `;
