@@ -8,7 +8,7 @@ import { IoLogoInstagram } from "@react-icons/all-files/io/IoLogoInstagram";
 
 const StyledContactBox = styled.div`
 	display: flex;
-	margin: 100px 0;
+	margin: 50px 0;
 	justify-content: space-evenly;
 `;
 

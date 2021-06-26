@@ -1,42 +1,53 @@
 import * as React from 'react';
-import { Formik } from 'formik';
 import "./Form.css";
 import { useForm, ValidationError } from '@formspree/react';
+import styled from 'styled-components';
+import { BiCheckDouble } from "@react-icons/all-files/Bi/BiCheckDouble";
 import { useState } from 'react';
 
+const StyledButtonBox = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+`;
+
+const StyledBiCheckDouble = styled(BiCheckDouble)`
+    font-size: 26px;
+    margin-right: 5px;
+    color: #00d659;
+`;
+
+const StyledMessage = styled.p`
+    font-weight: 200;
+    font-size: 20px;
+    color: #00d659;
+`;
+
+const StyledValidationError = styled(ValidationError)`
+    font-size: 13px;
+    color: #ff4848;
+    width: 100%;
+    font-style: italic;
+`;
+
 export const Email = () => {
-    const [showMessage, setShowMessage] = useState(false);
+    const [state, handleSubmit] = useForm("moqyljjg");
+    const [name, setName] = useState("");
+    const [phone, setPhone] = useState("");
+    const [email, setEmail] = useState("");
+    const [text, setText] = useState("");
 
     return(
-        <Formik
-            initialValues={{ name: '', phone: '', email: '', description: '' }}
-            onSubmit={(values, { setSubmitting }) => {
-                setShowMessage(true);
-                setSubmitting(false);
-                values.name ='';
-                values.phone ='';
-                values.email ='';
-                values.description ='';
-            }}>
-        {({
-            values,
-            errors,
-            touched,
-            handleChange,
-            handleBlur,
-            handleSubmit,
-            isSubmitting,
-        }) => (
-        <form action="https://formspree.io/f/moqyljjg" onSubmit={handleSubmit} method="POST" className="form__form">
+        <form onSubmit={handleSubmit} className="form__form">
             <div className="form__item">
                 <input
                     id="name"
                     type="text"
                     name="name"
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    value={values.name}
                     placeholder=" "
+                    onChange={(e)=> setName(e.target.value)}
+                    value={state.succeeded ? "" : name}
                 />
                 <label htmlFor="name">Imię i nazwisko</label>
                 <div className="forms__item__bar" />
@@ -44,26 +55,29 @@ export const Email = () => {
             <div className="form__item">
                 <input 
                     id="phone"
-                    type="number" 
+                    type="number"
                     name="phone"  
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    value={values.phone}
-                    placeholder=" " 
+                    placeholder=" "
+                    onChange={(e)=> setPhone(e.target.value)}
+                    value={state.succeeded ? "" : phone}
                 />
                 <label htmlFor="phone">Numer telefonu</label>
                 <div className="forms__item__bar" />
             </div>
+            <StyledValidationError 
+            prefix="E-mail" 
+            field="email"
+            errors={state.errors}/>
             <div className="form__item">
                 <input 
                     id="email"
-                    type="text" 
+                    type="email" 
                     name="email"  
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    value={values.email}
-                    placeholder=" " 
+                    placeholder=" "
+                    onChange={(e)=> setEmail(e.target.value)}
+                    value={state.succeeded ? "" : email}
                 />
+        
                 <label htmlFor="email">Adres e-mail</label>
                 <div className="forms__item__bar" />
             </div>
@@ -71,16 +85,18 @@ export const Email = () => {
                 <textarea
                     id="description"
                     name="description"  
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    value={values.description}
-                    placeholder=" " />
+                    placeholder=" " 
+                    onChange={(e) => setText(e.target.value)}
+                    value={state.succeeded ? "" : text}
+                    />
                 <label htmlFor="description">Wiadomość</label>
                 <div className="forms__item__bar" />
             </div>
-            <button className="form__button" type="submit" disabled={isSubmitting}>Wyślij</button>
-            {showMessage && <p>Wysłano</p>}
+            <StyledButtonBox>
+                <button className="form__button" type="submit" disabled={state.submitting}>Wyślij</button>
+                {state.succeeded && <StyledMessage><StyledBiCheckDouble/>wysłano</StyledMessage>}
+            </StyledButtonBox>
         </form>
     )}
-    </Formik>
-)};
+
+
