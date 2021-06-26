@@ -57,7 +57,7 @@ const StyledArticleDate = styled.p`
 `;
 
 const StyledArticlePhoto = styled.img`
-    width: 250px;
+    width: 350px;
     display: inline-block;
     margin-right: 50px;
     margin-bottom: 50px;
@@ -68,6 +68,7 @@ const StyledImQuotesLeft = styled(ImQuotesLeft)`
   font-size: 30px;
   margin-right: 15px;
   color: #202020;
+  opacity: 0.85;
 `;
 
 

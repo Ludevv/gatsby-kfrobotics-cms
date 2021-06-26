@@ -1,5 +1,5 @@
 import * as React from "react";
-import Form from '../components/Form';
+import { Email } from '../components/Email';
 import styled from 'styled-components'
 import Title from "../components/Title";
 import { ImPhone } from "@react-icons/all-files/Im/ImPhone";
@@ -148,16 +148,16 @@ const StyledCompanyInfo = styled.div`
 		&:nth-of-type(4) {
 			margin-top: 75px;
 			margin-bottom: 3px;
-			font-size: 17px;
+			font-size: 18px;
 		}
 		&:nth-of-type(5) {
 			margin-top: 0;
 			margin-bottom: 3px;
-			font-size: 17px;
+			font-size: 18px;
 		}
 		&:nth-of-type(6) {
 			margin-top: 0;
-			font-size: 17px;
+			font-size: 18px;
 		}
 
 
@@ -198,7 +198,7 @@ const ContactPage: React.SFC<ContactPageProps> = () => {
 						<p>VI Wydział Gospodarczy Krajowego</p>
 						<p>Rejestru Sądowego</p>
 					</StyledCompanyInfo>
-				<Form/>
+				<Email/>
 
 			</StyledContactBox>
     </>
