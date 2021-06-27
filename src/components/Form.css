@@ -96,3 +96,7 @@ textarea:focus ~ .forms__item__bar {
   margin-bottom: 20px;
   letter-spacing: 1.5px;
 }
+
+.form__button:focus {
+  outline: 0;
+}

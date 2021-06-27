@@ -166,6 +166,11 @@ const StyledOrderButton = styled.span`
 		font-size: 35px;
 		font-weight: 700;
 		font-family: "Roboto";
+
+		&:hover {
+		color: black;
+		background-color: white;
+	}
 	}
 
 	@media (max-width: 550px) {

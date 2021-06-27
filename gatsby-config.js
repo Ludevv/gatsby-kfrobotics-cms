@@ -6,7 +6,7 @@ module.exports = {
     titleTemplate: "KF Robotics",
     description:
       "Specjalizujemy się w tworzeniu gotowych bezzałogowych jednostek pływających do pomiarów batymetrycznych.",
-    url: "https://kfrobotics.netlify.app/", // No trailing slash allowed!
+    url: "https://kfrobotics.netlify.app/",
   },
   plugins: [
     {
