@@ -86,9 +86,9 @@ const StyledButton = styled.span`
 		display: block;
 		text-align: center;
 		margin: 0;
-		padding-bottom: 35px;
+		padding-bottom: 18px;
 		font-family: "Roboto";
-		font-size: 35px;
+		font-size: 30px;
 		font-weight: 700;
 
 		&:hover {
@@ -200,7 +200,7 @@ const StyledMobileNav = styled.div`
 	height: 100vh;
 	right: 0;
 	left: 0;
-	padding: 80px 0 0;
+	padding: 30px 0 0;
 	background-color: gold;
 	z-index: 10;
 

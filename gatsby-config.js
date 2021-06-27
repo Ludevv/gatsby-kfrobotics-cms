@@ -3,6 +3,10 @@ require("dotenv").config();
 module.exports = {
   siteMetadata: {
     title: "gatsby-kfrobotics",
+    titleTemplate: "KF Robotics",
+    description:
+      "Specjalizujemy się w tworzeniu gotowych bezzałogowych jednostek pływających do pomiarów batymetrycznych.",
+    url: "https://kfrobotics.netlify.app/", // No trailing slash allowed!
   },
   plugins: [
     {
@@ -11,8 +15,8 @@ module.exports = {
         name: "K.F. Robotics",
         short_name: "KFRobotics",
         start_url: "/",
-        background_color: "#f7f0eb",
-        theme_color: "#a2466c",
+        background_color: "#fff",
+        theme_color: "#fff",
         display: "standalone",
         icon: "src/images/logo.png",
       },
