@@ -2,9 +2,9 @@ import * as React from "react";
 import styled from 'styled-components';
 import Title from "../components/Title";
 import Header from "../components/Header";
-import { IoIosBuild } from "@react-icons/all-files/io/IoIosBuild";
-import { IoBulbSharp } from "@react-icons/all-files/io5/IoBulbSharp";
-import { RiMedal2Fill } from "@react-icons/all-files/ri/RiMedal2Fill";
+import { IoIosBuild } from "react-icons/io";
+import { IoBulbSharp } from "react-icons/io5";
+import { RiMedal2Fill } from "react-icons/ri";
 import CarouselPage from "../components/CarouselPage";
 
 

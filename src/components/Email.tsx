@@ -2,7 +2,7 @@ import * as React from 'react';
 import "./Form.css";
 import { useForm, ValidationError } from '@formspree/react';
 import styled from 'styled-components';
-import { BiCheckDouble } from "@react-icons/all-files/Bi/BiCheckDouble";
+import { BiCheckDouble } from "react-icons/bi";
 import { useState } from 'react';
 
 const StyledButtonBox = styled.div`

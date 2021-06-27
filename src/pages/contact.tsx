@@ -2,9 +2,9 @@ import * as React from "react";
 import { Email } from '../components/Email';
 import styled from 'styled-components'
 import Title from "../components/Title";
-import { ImPhone } from "@react-icons/all-files/Im/ImPhone";
-import { FaFacebook } from "@react-icons/all-files/fa/FaFacebook";
-import { IoLogoInstagram } from "@react-icons/all-files/io/IoLogoInstagram";
+import { ImPhone } from "react-icons/Im";
+import { FaFacebook } from "react-icons/fa";
+import { IoLogoInstagram } from "react-icons/io";
 
 const StyledContactBox = styled.div`
 	display: flex;

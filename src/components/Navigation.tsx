@@ -1,8 +1,8 @@
 import * as React from "react";
 import { Link } from 'gatsby';
 import styled from "styled-components";
-import { FaCaretDown } from "@react-icons/all-files/fa/FaCaretDown";
-import { AiOutlineAlignRight } from "@react-icons/all-files/Ai/AiOutlineAlignRight";
+import { FaCaretDown } from "react-icons/fa";
+import { AiOutlineAlignRight } from "react-icons/Ai";
 import { useEffect, useState } from "react";
 
 

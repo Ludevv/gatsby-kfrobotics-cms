@@ -3,10 +3,10 @@ import styled from 'styled-components';
 
 
 import { Link } from 'gatsby';
-import { ImPhone } from "@react-icons/all-files/Im/ImPhone";
-import { FaFacebook } from "@react-icons/all-files/fa/FaFacebook";
-import { IoLogoInstagram } from "@react-icons/all-files/io/IoLogoInstagram";
-import { MdKeyboardArrowRight } from "@react-icons/all-files/Md/MdKeyboardArrowRight";
+import { ImPhone } from "react-icons/im";
+import { FaFacebook } from "react-icons/fa";
+import { IoLogoInstagram } from "react-icons/io";
+import { MdKeyboardArrowRight } from "react-icons/Md";
 
 
 const AboutBox = styled.div`

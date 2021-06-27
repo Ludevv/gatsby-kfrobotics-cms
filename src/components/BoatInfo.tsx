@@ -1,15 +1,12 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import { FaSignal } from "@react-icons/all-files/Fa/FaSignal";
+import { FaSignal } from "react-icons/fa";
 
 export interface BoatInfoProps {}
 
 const StyledInfoBox = styled.div`
     display: flex;
     margin-bottom: 50px;
-
-    
-
 `;
 
 const StyledIcon = styled.div`
