@@ -302,7 +302,7 @@ const Footer: React.SFC<FooterProps> = () => {
 			 <h3>na skróty:</h3>
 			 <StyledLink to="/"><p><StyledMdKeyboardArrowRight/> Strona Główna</p></StyledLink>
 			 <StyledLink to="/articles"><p><StyledMdKeyboardArrowRight/> Artykuły</p></StyledLink>
-			 <StyledLink to="//gerris-asv"><p><StyledMdKeyboardArrowRight/> Gerris ASV</p></StyledLink>
+			 <StyledLink to="/gerris-asv"><p><StyledMdKeyboardArrowRight/> Gerris ASV</p></StyledLink>
 			 <StyledLink to="/gerris-asv-surveyor"><p><StyledMdKeyboardArrowRight/> Gerris ASV Surveyor</p></StyledLink>
 			 <StyledLink to="/gerris-1100-asv"><p><StyledMdKeyboardArrowRight/> Gerris 1100 ASV</p></StyledLink>
 			 <StyledLink to="/contact"><p><StyledMdKeyboardArrowRight/> Kontakt</p></StyledLink>
