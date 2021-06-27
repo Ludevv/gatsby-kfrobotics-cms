@@ -38,17 +38,27 @@ const StyledArticleBox = styled.div`
   	@media (max-width:850px) {
     		flex-direction: column;
   		}
-
-
- 
-
 `;
 
 const StyledArticleTitle = styled.h3`
     color: #202020;
     font-size: 25px;
     margin-bottom: 15px;
+      @media (max-width:850px) {
+    		display: none;
+  		}
 `;
+const StyledArticleTitleMobile = styled.h3`
+    color: #202020;
+    font-size: 25px;
+    margin-bottom: 15px;
+    display: none;
+       @media (max-width:850px) {
+    		display: block;
+  		}
+`;
+
+
 const StyledArticleContent = styled.p`
     
 `;
@@ -79,9 +89,6 @@ const StyledImQuotesLeft = styled(ImQuotesLeft)`
   opacity: 0.85;
 `;
 
-
-
-
 export interface ArticlesPageProps {
   data: any
 }
@@ -90,6 +97,7 @@ const ArticlesPage: React.SFC<ArticlesPageProps> = ({data}) => {
 
     const articles = data.allDatoCmsArticle.nodes.map(article => 
       <StyledArticleBox>
+        <StyledArticleTitleMobile><StyledImQuotesLeft/>{article.title}</StyledArticleTitleMobile>
         { article.photo && <StyledArticlePhoto src={article.photo.url}/> }
         <div>
             <StyledArticleTitle><StyledImQuotesLeft/>{article.title}</StyledArticleTitle>

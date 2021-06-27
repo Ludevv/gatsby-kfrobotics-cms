@@ -26,6 +26,7 @@ const StyledTableBox = styled.div`
     @media (max-width: 880px) {
 	    margin: 50px auto;
       width: 100%;
+      filter: drop-shadow(rgba(0, 0, 0, 0) 0px 0px 0px);
 	  }
 `;
 
@@ -65,6 +66,7 @@ const StyledColumnName = styled.div`
     @media (max-width: 880px) {
       flex-basis: 50%;
       padding: 5px 0 5px 5px;
+      border-left: 2px solid #eee;
 	  }
 `;
 
@@ -87,6 +89,7 @@ const StyledColumnValue = styled.div`
     padding: 5px 0 5px 15px;
       @media (max-width: 880px) {
       flex-basis: 60%;
+      border-right: 2px solid #eee;
 	  }
 `;
 
@@ -99,7 +102,7 @@ const StyledHeaderColumnValue = styled.div`
     font-weight: 500;
     font-size: 20px;
 
-       @media (max-width: 880px) {
+    @media (max-width: 880px) {
       flex-basis: 60%;
 	  }
 `;

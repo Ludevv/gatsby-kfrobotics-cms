@@ -29,7 +29,7 @@ const StyledAbout = styled.div`
 	}
 
 	ul {
-		list-style: none;
+		list-style: square;
 		margin-left: 20px;
 
 		li {
@@ -37,14 +37,6 @@ const StyledAbout = styled.div`
 			margin-bottom: 20px;
 		}
 
-		li::before {
-			content: "▪ ";
-			color: gold;
-			display: inline-block;
-			font-size: 22px;
-			margin-left: -20px;
-			margin-right: 10px;
-		}
 	}
 
 	@media (max-width: 1235px) {
