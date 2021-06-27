@@ -18,7 +18,10 @@ export const GlobalStyle = createGlobalStyle`
         margin: 0;
         padding: 125px 0 0;
         font-family: 'Roboto';
-  
+
+        @media (max-width: 500px) {
+            padding: 100px 0 0 0;
+	    }
     }
 
     button {

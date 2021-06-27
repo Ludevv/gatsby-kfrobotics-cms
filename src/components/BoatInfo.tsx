@@ -7,12 +7,19 @@ export interface BoatInfoProps {}
 const StyledInfoBox = styled.div`
     display: flex;
     margin-bottom: 50px;
+
+    
+
 `;
 
 const StyledIcon = styled.div`
     flex-basis: 200px;
     padding-right: 40px;
     margin-top: 30px;
+
+    @media (max-width: 700px) {
+        display: none;
+	}
 `;
 
 const StyledFaSignal = styled(FaSignal)`
@@ -25,6 +32,11 @@ const StyledInfoText = styled.p`
     font-size: 20px;
     padding: 0 0 0 40px;
     line-height: 1.8;
+
+    @media (max-width: 700px) {
+        border-left: none;
+        padding: 0;
+	}
 `;
 
 

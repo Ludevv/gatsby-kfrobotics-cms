@@ -10,6 +10,10 @@ const StyledContactBox = styled.div`
 	display: flex;
 	margin: 50px 0;
 	justify-content: space-evenly;
+
+	@media (max-width: 1300px) {
+		flex-direction: column-reverse;
+	}
 `;
 
 const StyledContact = styled.div`
@@ -141,12 +145,12 @@ const StyledCompanyInfo = styled.div`
 	
 	p {
 		color: #7d7d7d;
-		font-size: 20px;
+		font-size: 18px;
 		font-weight: 200;
 		margin: 12px 0;
 
 		&:nth-of-type(4) {
-			margin-top: 75px;
+			margin-top: 40px;
 			margin-bottom: 3px;
 			font-size: 18px;
 		}

@@ -15,7 +15,7 @@ const GerrisSurveyorPage: React.SFC<GerrisSurveyorPageProps> = () => {
   return ( 
     <>
     <Gerris
-        title="Gerris ASV Surveyor"
+        title="Surveyor"
         text1={
           "Gerris ASV Surveyor - Jest to rozszerzona wersja katamaranu Gerris ASV ze zintegrowanym systemem do pomiarów batymetrycznych." 
           }

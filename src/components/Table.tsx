@@ -22,12 +22,24 @@ const StyledTableBox = styled.div`
     margin: 120px auto;
     border-bottom: 5px solid #202020;
     filter: drop-shadow(rgba(0, 0, 0, 0.35) 0px 5px 15px);
+
+    @media (max-width: 880px) {
+	    margin: 50px auto;
+      width: 100%;
+	  }
 `;
 
 const StyledTable = styled.div`
     display: flex;
     flex-direction: column;
     font-size: 18px;
+
+    @media (max-width: 880px) {
+      font-size: 15px;
+	  }
+    @media (max-width: 570px) {
+      font-size: 13px;
+	  }
 `;
 
 const StyledRow = styled.div`
@@ -49,6 +61,11 @@ const StyledRow = styled.div`
 const StyledColumnName = styled.div`
     flex-basis: 50%;
     padding: 5px 0 5px 15px;
+
+    @media (max-width: 880px) {
+      flex-basis: 50%;
+      padding: 5px 0 5px 5px;
+	  }
 `;
 
 const StyledHeaderColumnName = styled.div`
@@ -59,12 +76,18 @@ const StyledHeaderColumnName = styled.div`
     border-radius: 15px 0 0 0;
     font-weight: 500;
     font-size: 20px;
+
+       @media (max-width: 880px) {
+      flex-basis: 50%;
+	  }
 `;
 
 const StyledColumnValue = styled.div`
     flex-basis: 50%;
     padding: 5px 0 5px 15px;
-    
+      @media (max-width: 880px) {
+      flex-basis: 60%;
+	  }
 `;
 
 const StyledHeaderColumnValue = styled.div`
@@ -75,6 +98,10 @@ const StyledHeaderColumnValue = styled.div`
     border-radius:  0 15px 0 0;
     font-weight: 500;
     font-size: 20px;
+
+       @media (max-width: 880px) {
+      flex-basis: 60%;
+	  }
 `;
  
 const Table: React.SFC<TableProps> = ({row1, row2, row3, row4, row5, row6, row7, row8, row9, row10, row11, row12, row13}) => {

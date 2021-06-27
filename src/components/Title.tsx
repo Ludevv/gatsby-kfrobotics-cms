@@ -30,6 +30,7 @@ const StyledText = styled.p`
     color: black;
     font-family: Audiowide;
     margin: 0;
+    word-wrap: break-word;
 `;
 
  

@@ -46,6 +46,13 @@ const StyledAbout = styled.div`
 			margin-right: 10px;
 		}
 	}
+
+	@media (max-width: 1235px) {
+    	flex-direction: column;
+  	}
+	@media (max-width: 500px) {
+    	margin: 60px 0 30px;
+  	}
 `;
 
 const StyledBox = styled.div`
@@ -54,7 +61,13 @@ const StyledBox = styled.div`
 
 	&:nth-of-type(2) {
 		margin: 0 80px;
+
+		@media (max-width: 1235px) {
+    		margin: 0;
+  		}
 	}
+
+
 
 `;
 

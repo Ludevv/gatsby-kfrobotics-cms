@@ -35,6 +35,10 @@ const StyledArticleBox = styled.div`
   display: flex;
   border-bottom: 2px solid gold;
 
+  	@media (max-width:850px) {
+    		flex-direction: column;
+  		}
+
 
  
 
@@ -62,6 +66,10 @@ const StyledArticlePhoto = styled.img`
     margin-right: 50px;
     margin-bottom: 50px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+     	@media (max-width:850px) {
+    		width: 100%;
+  		}
 `;
 
 const StyledImQuotesLeft = styled(ImQuotesLeft)`

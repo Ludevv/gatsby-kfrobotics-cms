@@ -9,8 +9,16 @@ export interface HeaderProps {}
 const StyledMain = styled.main`
 	height: 80vh;
     display: flex;
+	flex-direction: row-reverse;
     justify-content: center;
     margin: 100px 0;
+
+	@media (max-width: 1235px) {
+		height: auto;
+		flex-direction: column;
+		margin: 0;
+	}
+
 `;
 const StyledName = styled.h1`
     flex-basis: 60%;
@@ -20,6 +28,17 @@ const StyledName = styled.h1`
     margin: 50px 0 0 0;
     font-family: "Audiowide";
     font-size: 85px;
+
+	@media (max-width: 1235px) {
+		font-size: 65px;
+		text-align: center;
+		margin: 0;
+		
+	}
+	@media (max-width: 550px) {
+		margin-top:  35px;
+		font-size: 45px;	
+	}
 
 	b {
 		font-weight: 700;
@@ -33,6 +52,17 @@ const StyledName = styled.h1`
 		line-height: 1.7;
 		font-weight: 200;
 		margin: 45px 0 60px;
+
+			
+		@media (max-width: 1235px) {
+			width: 100%;
+			text-align: left;
+		}
+	}
+
+	
+	@media (max-width: 1235px) {
+		width: 100%;
 	}
 
 `;
@@ -54,6 +84,11 @@ const StyledLink = styled(Link)`
 		background-color: white;
 		color: gold;
 	}
+
+	@media (max-width: 500px) {
+		width: 100%;
+		margin: 0 auto 50px;
+	}
 `;
  
 const Header: React.SFC<HeaderProps> = ({children}) => {
@@ -61,20 +96,21 @@ const Header: React.SFC<HeaderProps> = ({children}) => {
   return ( 
 
 	<StyledMain>
-		<StyledName>
-			K.F. Robotics
-			<p>Projektujemy i wykonujemy <b>dedykowane</b> rozwiązania inżynierskie, kompleksowo obsługując zlecenia naszych Klientów.</p>
-			<StyledLink to="/contact">ZAMÓW</StyledLink>
-		</StyledName>
-		<StaticImage
+			<StaticImage
 			src="../images/render.png"
 			width={800}
 			alt="render"
 			placeholder="tracedSVG"
 			quality={100}
 			objectFit="contain"
-      objectPosition="0% 0%"
+      objectPosition="50% 0%"
 		/>
+		<StyledName>
+			K.F. Robotics
+			<p>Projektujemy i wykonujemy <b>dedykowane</b> rozwiązania inżynierskie, kompleksowo obsługując zlecenia naszych Klientów.</p>
+			<StyledLink to="/contact">ZAMÓW</StyledLink>
+		</StyledName>
+	
 	</StyledMain>
 
    );

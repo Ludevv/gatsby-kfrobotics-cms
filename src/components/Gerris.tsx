@@ -33,6 +33,10 @@ const StyledBoxOdd = styled.div`
     display: flex;
     margin: 70px 0;
     justify-content: center;
+
+    @media (max-width: 760px) {
+		flex-direction: column;	
+	}
 `;
 
 const StyledTextOdd = styled.p`
@@ -43,6 +47,12 @@ const StyledTextOdd = styled.p`
     font-family: Roboto;
     padding-right: 120px;
     line-height: 1.8;
+
+    @media (max-width: 760px) {
+		width: 100%;
+        padding-right: 0;
+        margin-bottom: 30px;
+	}
 `;
 
 const StyledBackgroundOdd = styled.div`
@@ -52,9 +62,12 @@ const StyledBackgroundOdd = styled.div`
     background-image: url(${(props: ImageProps) => props.path});
     background-position: center;
     background-size: cover;
-    
 	background-repeat: no-repeat;
-   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+    @media (max-width: 760px) {
+		width: 100%;
+	}
 
    &::after {
     position: absolute;
@@ -82,11 +95,22 @@ const StyledImageOdd = styled.div`
     background-repeat: no-repeat;
      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     animation: ${float} 10s linear infinite alternate;
+
+    @media (max-width: 760px) {
+		left: 50%;
+	}
+    @media (max-width: 520px) {
+		width: 90%;
+	}
 `;
 const StyledBoxEven = styled.div`
     display: flex;
     margin-bottom: 70px;
     justify-content: center;
+
+    @media (max-width: 760px) {
+		flex-direction: column;	
+	}
 `;
 
 const StyledTextEven = styled.p`
@@ -97,6 +121,12 @@ const StyledTextEven = styled.p`
     font-family: Roboto;
     padding-left: 120px;
     line-height: 1.8;
+
+    @media (max-width: 760px) {
+		width: 100%;
+        padding-left: 0;
+        margin-top: 30px;
+	}
 `;
 
 const StyledBackgroundEven = styled.div`
@@ -108,6 +138,10 @@ const StyledBackgroundEven = styled.div`
     background-size: cover;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     background-repeat: no-repeat;
+
+    @media (max-width: 760px) {
+		width: 100%;
+	}
 
     &::after {
         position: absolute;
@@ -135,6 +169,13 @@ const StyledImageEven = styled.div`
     background-repeat: no-repeat;
      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     animation: ${float} 10s linear infinite alternate;
+
+    @media (max-width: 760px) {
+		left: 50%;
+	}
+    @media (max-width: 520px) {
+		width: 90%;
+	}
 `;
  
 const Gerris: React.SFC<GerrisProps> = ({title, text1, text2, text3, imgSrc1, imgSrc2, imgSrc3}) => {

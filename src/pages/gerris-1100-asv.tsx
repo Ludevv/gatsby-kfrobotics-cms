@@ -15,7 +15,7 @@ const Gerris1100Page: React.SFC<Gerris1100PageProps> = () => {
   return ( 
     <>
         <Gerris
-        title="Gerris 1100 ASV"
+        title="1100 ASV"
         text1={
           "Ciągły rozwój, optymalizacja procesu produkcji i doskonalenie konstrukcji doprowadziło nas do punktu, w którym tworzymy udoskonalonego Gerrisa ASV - Gerris ASV 1100. Praktyczniejszego, sprawniejszego i jeszcze bardziej niezawodnego."
           }

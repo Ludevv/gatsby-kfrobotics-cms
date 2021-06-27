@@ -13,6 +13,14 @@ margin-bottom: 170px;
 box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
  padding: 0;
  width: 80%;
+
+   @media(max-width: 1000px) {
+    width: 100%;
+	}
+
+  @media (max-width: 500px) {
+    margin-bottom: 80px;
+  }
 `;
 
 
@@ -26,11 +34,24 @@ const StyledName = styled.span`
   	font-family: "Audiowide";
 	  font-size: 38px;
     color: black;
+    
+    @media(max-width: 500px) {
+      font-size: 23px;
+    }
 `;
 
 const StyledDescription = styled.p`
 	  font-size: 20px;
     color: black;
+
+    @media(max-width: 500px) {
+      font-size: 15px;
+      margin-bottom: 0;
+      padding-right: 5px;
+      padding-left: 5px;
+      }
+
+	}
 `;
 
 const CarouselPage = () => {
