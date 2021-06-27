@@ -72,6 +72,7 @@ const StyledArticleDate = styled.p`
 
 const StyledArticlePhoto = styled.img`
     width: 350px;
+    height: 100%;
     display: inline-block;
     margin-right: 50px;
     margin-bottom: 50px;
