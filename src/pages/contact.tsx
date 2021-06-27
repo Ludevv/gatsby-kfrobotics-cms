@@ -2,7 +2,7 @@ import * as React from "react";
 import { Email } from '../components/Email';
 import styled from 'styled-components'
 import Title from "../components/Title";
-import { ImPhone } from "react-icons/Im";
+import { ImPhone } from "react-icons/im";
 import { FaFacebook } from "react-icons/fa";
 import { IoLogoInstagram } from "react-icons/io";
 

@@ -2,7 +2,7 @@ import { graphql } from "gatsby";
 import * as React from "react";
 import styled from "styled-components";
 import Title from "../components/Title";
-import { ImQuotesLeft } from "react-icons/Im";
+import { ImQuotesLeft } from "react-icons/im";
 
 export const query = graphql`
 query MyQuery {

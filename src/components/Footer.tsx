@@ -6,7 +6,7 @@ import { Link } from 'gatsby';
 import { ImPhone } from "react-icons/im";
 import { FaFacebook } from "react-icons/fa";
 import { IoLogoInstagram } from "react-icons/io";
-import { MdKeyboardArrowRight } from "react-icons/Md";
+import { MdKeyboardArrowRight } from "react-icons/md";
 
 
 const AboutBox = styled.div`
