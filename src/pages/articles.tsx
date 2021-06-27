@@ -9,6 +9,7 @@ query MyQuery {
   allDatoCmsArticle(sort: {fields: date, order: DESC}) {
     nodes {
       content
+      english
       date
       title
       photo {
@@ -96,23 +97,45 @@ export interface ArticlesPageProps {
  
 const ArticlesPage: React.SFC<ArticlesPageProps> = ({data}) => {
 
-    const articles = data.allDatoCmsArticle.nodes.map(article => 
-      <StyledArticleBox>
-        <StyledArticleTitleMobile><StyledImQuotesLeft/>{article.title}</StyledArticleTitleMobile>
-        { article.photo && <StyledArticlePhoto src={article.photo.url}/> }
-        <div>
-            <StyledArticleTitle><StyledImQuotesLeft/>{article.title}</StyledArticleTitle>
-            <StyledArticleContent>{article.content}</StyledArticleContent>
-            <StyledArticleDate>{article.date}</StyledArticleDate>
-        </div>
-        <hr/>
-      </StyledArticleBox>
-    )
+    const eng = false;
+
+    const polishArticles =  data.allDatoCmsArticle.nodes.map(article => {
+		if(!article.english) {
+			return(
+				<StyledArticleBox>
+				<StyledArticleTitleMobile><StyledImQuotesLeft/>{article.title}</StyledArticleTitleMobile>
+				{ article.photo && <StyledArticlePhoto src={article.photo.url}/> }
+				<div>
+					<StyledArticleTitle><StyledImQuotesLeft/>{article.title}</StyledArticleTitle>
+					<StyledArticleContent>{article.content}</StyledArticleContent>
+					<StyledArticleDate>{article.date}</StyledArticleDate>
+				</div>
+				<hr/>
+			</StyledArticleBox>)
+		}
+    });
+
+    const englishArticles = data.allDatoCmsArticle.nodes.map(article => {
+		if(!article.english) {
+			return(
+				<StyledArticleBox>
+				<StyledArticleTitleMobile><StyledImQuotesLeft/>{article.title}</StyledArticleTitleMobile>
+				{ article.photo && <StyledArticlePhoto src={article.photo.url}/> }
+				<div>
+					<StyledArticleTitle><StyledImQuotesLeft/>{article.title}</StyledArticleTitle>
+					<StyledArticleContent>{article.content}</StyledArticleContent>
+					<StyledArticleDate>{article.date}</StyledArticleDate>
+				</div>
+				<hr/>
+			</StyledArticleBox>)
+		}
+    });
 
   return ( 
     <StyledContent>
-      <Title>Artykuły</Title>
-      {articles}
+		<Title>Artykuły</Title>
+		{!eng && polishArticles}
+		{eng && englishArticles}
     </StyledContent>
    );
 }

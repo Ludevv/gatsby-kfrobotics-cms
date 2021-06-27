@@ -35,7 +35,7 @@ const StyledBoxOdd = styled.div`
     justify-content: center;
 
     @media (max-width: 760px) {
-		flex-direction: column;	
+		flex-direction: column-reverse;	
 	}
 `;
 
@@ -51,7 +51,7 @@ const StyledTextOdd = styled.p`
     @media (max-width: 760px) {
 		width: 100%;
         padding-right: 0;
-        margin-bottom: 30px;
+        margin: 30px 0 0;
 	}
 `;
 

@@ -2,8 +2,8 @@ require("dotenv").config();
 
 module.exports = {
   siteMetadata: {
-    title: "gatsby-kfrobotics",
-    titleTemplate: "KF Robotics",
+    title: "K.F. Robotics",
+    titleTemplate: "K.F. Robotics",
     description:
       "Specjalizujemy się w tworzeniu gotowych bezzałogowych jednostek pływających do pomiarów batymetrycznych.",
     url: "https://kfrobotics.netlify.app/",
