@@ -3,6 +3,7 @@ import { Link } from 'gatsby';
 import styled from "styled-components";
 import { FaCaretDown } from "react-icons/fa";
 import { AiOutlineAlignRight } from "react-icons/ai";
+import { VscGlobe } from "react-icons/vsc";
 import { useEffect, useState } from "react";
 import { mapStateToProps } from "../pages";
 import { connect } from "react-redux";
@@ -208,7 +209,7 @@ const StyledMobileNav = styled.div`
 	height: 100vh;
 	right: 0;
 	left: 0;
-	padding: 30px 0 0;
+	padding: 0;
 	background-color: gold;
 	z-index: 10;
 
@@ -223,6 +224,33 @@ const StyledImage = styled.div`
 	margin-top: 20px;
 	border-radius: 50%;
 	background-color: ${(props: NavProps) => props.background ? "black" : "gold"};
+`;
+
+const StyledLang = styled.button`
+	background-color: transparent;
+	border: none;
+	text-decoration: underline;
+	margin-left: 5px;
+	font-size: 17px;
+	font-weight: 100;
+
+	&:focus {
+	outline: 0;
+	}
+`;
+
+const StyledVscGlobe = styled(VscGlobe)`
+	font-size: 22px;
+	color: #202020;
+	margin-left: 25px;
+	transform: translateY(10%);
+`;
+
+const StyledLangBox = styled.div`
+	width: 100%;
+	text-align: right;
+	padding-right: 20px;
+	margin-bottom: 20px;
 `;
 
 export interface NavigationProps {
@@ -295,12 +323,17 @@ const Navigation: React.SFC<NavigationProps> = ({isEnglish, handleChangeLanguage
 			<StyledLink to="/contact" onClick={handleHideOptions}>
 				<StyledOrderButton>{isEnglish ? "order" : "zamów"}</StyledOrderButton>
 			</StyledLink>
-		<button onClick={() => handleChangeLanguage(isEnglish)}>język</button>
+		<StyledVscGlobe/><StyledLang onClick={() => handleChangeLanguage(isEnglish)}> {isEnglish ? "pl" : "en"}</StyledLang>
 
 		</StyledButtons>
+		
 		<StyledMobileMenu onClick={handleMobileMenu}/>
 
 		{isMobile && <StyledMobileNav>
+			<StyledLangBox>
+				<StyledVscGlobe/>
+				<StyledLang onClick={() => handleChangeLanguage(isEnglish)}> {isEnglish ? "pl" : "en"}</StyledLang>
+			</StyledLangBox>
 			<StyledLink to="/" onClick={handleHideMobileMenu}>
 				<StyledButton>{isEnglish ? "home" : "strona główna"}</StyledButton>
 			</StyledLink>
