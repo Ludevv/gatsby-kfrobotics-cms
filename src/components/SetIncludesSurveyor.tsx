@@ -1,7 +1,11 @@
 import * as React from 'react';
+import { connect } from 'react-redux';
 import styled from 'styled-components';
+import { mapStateToProps } from '../pages';
 
-export interface SetIncludesSurveyorProps {}
+export interface SetIncludesSurveyorProps {
+    isEnglish: boolean;
+}
 
 const StyledBackground = styled.div`
     position: relative;
@@ -62,7 +66,7 @@ const StyledRight = styled.div`
     width: 140px;
     background-color: #9c9c9c;
 
-             @media (max-width: 1650px) {
+    @media (max-width: 1650px) {
          right: -120px;
          width: 120px;
     }
@@ -93,11 +97,11 @@ const StyledRight = styled.div`
     @media(max-width: 500px) {
          right: -20px;
          width: 20px;
-        }
+    }
 `;
 
 const StyledSet = styled.div`
-    flex-basis: 100%;
+    flex-basis: 25%;
 
     p {
         text-transform: uppercase;
@@ -118,35 +122,58 @@ const StyledSet = styled.div`
         font-size: 15px;
         margin-left: 17px;
     }
+
+    @media(max-width: 1700px) {
+        flex-basis: 30%;
+    }
+    @media(max-width: 1400px) {
+        flex-basis: 40%;
+    }
+    @media(max-width: 1200px) {
+        flex-basis: 50%;
+    }
+    @media(max-width: 1000px) {
+        flex-basis: 60%;
+    }
+    @media(max-width: 800px) {
+        flex-basis: 70%;
+    }
+    @media(max-width: 500px) {
+        flex-basis: 100%;
+    }
 `;
 
 
  
-const SetIncludesSurveyor: React.SFC<SetIncludesSurveyorProps> = () => {
+const SetIncludesSurveyor: React.SFC<SetIncludesSurveyorProps> = ({isEnglish}) => {
     return ( 
         <StyledBackground>
             <StyledLeft/>
             <StyledRight/>
             <StyledSet>
-                <p>Zestaw zawiera:</p>
+                <p>{!isEnglish ? "Zestaw zawiera" : "Set contains"}</p>
                 <ul>
-                    <li>zdalnie sterowaną jednostkę typu katamaran</li>
-                    <li>autopilot z telemetrią</li>
-                    <li>echosonda – Echologger EU400</li>
-                    <li>GPS RTK – Emlid Reach M2</li>
-                    <li>komputer pokładowy z Windows 10</li>
-                    <li>cyfrowy transmisja danych pomiarowych</li>
-                    <li>kontroler z drążkami do sterowania ręcznego</li>
-                    <li>zestaw akumulatorów napędowych 36Ah</li>
-                    <li>skrzynie transportowe</li>
-                    <li>dwie ładowarki 10A do akumulatorów</li>
-                    <li>ładowarka 2A kontrolera sterującego</li>
-                    <li>uchwyt echosondę i odbiornik GNSS</li>
-                    <li>narzędzia do obsługi</li>
+                    <li>{!isEnglish ? "zdalnie sterowaną jednostkę typu katamaran" : "remotely controlled catamaran type unit"}</li>
+                    <li>{!isEnglish ? "autopilot z telemetrią" : "autopilot with telemetry"}</li>
+                    <li>{!isEnglish ? "echosonda – Echologger EU400" : "echosounder – Echologger EU400"}</li>
+                    <li>{!isEnglish ? "GPS RTK – Emlid Reach M2" : "GPS RTK – Emlid Reach M2"}</li>
+                    <li>{!isEnglish ? 
+                    "komputer pokładowy z Windows 10" 
+                    : 
+                    "on-board computer"}
+                    </li>
+                    <li>{!isEnglish ? "cyfrowa transmisja danych pomiarowych" : "digital measurement data transmission system"}</li>
+                    <li>{!isEnglish ? "kontroler z drążkami do sterowania ręcznego" : "controller for manual control"}</li>
+                    <li>{!isEnglish ? "zestaw akumulatorów napędowych 72 Ah" : "72 Ah drive battery pack"}</li>
+                    <li>{!isEnglish ? "skrzynie transportowe" : "transport crates"}</li>
+                    <li>{!isEnglish ? "ładowarka 10A akumulatorów napędowych" : "drive battery 10A charger"}</li>
+                    <li>{!isEnglish ? "ładowarka 2A kontrolera sterującego" : "control controller 2A charger"}</li>
+                    <li>{!isEnglish ? "uchwyt echosondę i odbiornik GNSS" : "sonar holder and GNSS receiver"}</li>
+                    <li>{!isEnglish ? "narzędzia do obsługi" : "maintenance tools"}</li>
                 </ul>
             </StyledSet>
         </StyledBackground>
      );
 }
  
-export default SetIncludesSurveyor;
+export default connect(mapStateToProps)(SetIncludesSurveyor);

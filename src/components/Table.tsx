@@ -1,5 +1,7 @@
 import * as React from 'react';
+import { connect } from 'react-redux';
 import styled from 'styled-components'
+import { mapStateToProps } from '../pages';
 
 export interface TableProps {
   row1?: string;
@@ -15,6 +17,7 @@ export interface TableProps {
   row11?: string;
   row12?: string;
   row13?: string;
+  isEnglish: boolean;
 }
 
 const StyledTableBox = styled.div`
@@ -107,65 +110,65 @@ const StyledHeaderColumnValue = styled.div`
 	  }
 `;
  
-const Table: React.SFC<TableProps> = ({row1, row2, row3, row4, row5, row6, row7, row8, row9, row10, row11, row12, row13}) => {
+const Table: React.SFC<TableProps> = ({isEnglish, row1, row2, row3, row4, row5, row6, row7, row8, row9, row10, row11, row12, row13}) => {
 
   return ( 
         <StyledTableBox>
         <StyledTable>
           <StyledRow>
-            <StyledHeaderColumnName>Parametr</StyledHeaderColumnName>
+            <StyledHeaderColumnName>{!isEnglish ? "Parametr:" : "Parameter:"}</StyledHeaderColumnName>
             <StyledHeaderColumnValue>Wartość</StyledHeaderColumnValue>
           </StyledRow>
           <StyledRow>
-            <StyledColumnName>Długość</StyledColumnName>
+            <StyledColumnName>{!isEnglish ? "Długość" : "Length"}</StyledColumnName>
             <StyledColumnValue>{row1}</StyledColumnValue>
           </StyledRow>
           <StyledRow>
-            <StyledColumnName>Szerokość</StyledColumnName>
+            <StyledColumnName>{!isEnglish ? "Szerokość" : "Width"}</StyledColumnName>
             <StyledColumnValue>{row2}</StyledColumnValue>
           </StyledRow>
           <StyledRow>
-            <StyledColumnName>Wysokość</StyledColumnName>
+            <StyledColumnName>{!isEnglish ? "Wysokość" : "Height"}</StyledColumnName>
             <StyledColumnValue>{row3}</StyledColumnValue>
           </StyledRow>
           <StyledRow>
-            <StyledColumnName>Masa własna</StyledColumnName>
+            <StyledColumnName>{!isEnglish ? "Masa własna" : "Own weight"}</StyledColumnName>
             <StyledColumnValue>{row4}</StyledColumnValue>
           </StyledRow>
           <StyledRow>
-            <StyledColumnName>Maksymalna ładowność</StyledColumnName>
+            <StyledColumnName>{!isEnglish ? "Maksymalna ładowność" : "Maximum payload"}</StyledColumnName>
             <StyledColumnValue>{row5}</StyledColumnValue>
           </StyledRow>
           <StyledRow>
-            <StyledColumnName>Prędkość maksymalna</StyledColumnName>
+            <StyledColumnName>{!isEnglish ? "Prędkość maksymalna" : "Max Speed"}</StyledColumnName>
             <StyledColumnValue>{row6}</StyledColumnValue>
           </StyledRow>
           <StyledRow>
-            <StyledColumnName>Napęd</StyledColumnName>
+            <StyledColumnName>{!isEnglish ? "Napęd" : "Drive"}</StyledColumnName>
             <StyledColumnValue>{row7}</StyledColumnValue>
           </StyledRow>
           <StyledRow>
-            <StyledColumnName>Śruby napędowe</StyledColumnName>
+            <StyledColumnName>{!isEnglish ? "Śruby napędowe" : "Propellers"}</StyledColumnName>
             <StyledColumnValue>{row8}</StyledColumnValue>
           </StyledRow>
           <StyledRow>
-            <StyledColumnName>Zasilanie</StyledColumnName>
+            <StyledColumnName>{!isEnglish ? "Zasilanie" : "Power Supply"}</StyledColumnName>
             <StyledColumnValue>{row9}</StyledColumnValue>
           </StyledRow>
           <StyledRow>
-            <StyledColumnName>Czas pływania</StyledColumnName>
+            <StyledColumnName>{!isEnglish ? "Czas pływania" : "Swimming time"}</StyledColumnName>
             <StyledColumnValue>{row10}</StyledColumnValue>
           </StyledRow>
           <StyledRow>
-            <StyledColumnName>Kadłub</StyledColumnName>
+            <StyledColumnName>{!isEnglish ? "Kadłub" : "Hull"}</StyledColumnName>
             <StyledColumnValue>{row11}</StyledColumnValue>
           </StyledRow>
           <StyledRow>
-            <StyledColumnName>Sterowanie</StyledColumnName>
+            <StyledColumnName>{!isEnglish ? "Sterowanie" : "Control"}</StyledColumnName>
             <StyledColumnValue>{row12}</StyledColumnValue>
           </StyledRow>
           <StyledRow>
-            <StyledColumnName>Oświetlenie</StyledColumnName>
+            <StyledColumnName>{!isEnglish ? "Oświetlenie" : "Lighting"}</StyledColumnName>
             <StyledColumnValue>{row13}</StyledColumnValue>
           </StyledRow>
         </StyledTable>
@@ -173,4 +176,4 @@ const Table: React.SFC<TableProps> = ({row1, row2, row3, row4, row5, row6, row7,
    );
 }
  
-export default Table;
+export default connect(mapStateToProps)(Table);

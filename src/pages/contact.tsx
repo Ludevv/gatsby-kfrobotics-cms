@@ -1,10 +1,12 @@
 import * as React from "react";
-import { Email } from '../components/Email';
+import Email from '../components/Email';
 import styled from 'styled-components'
 import Title from "../components/Title";
 import { ImPhone } from "react-icons/im";
 import { FaFacebook } from "react-icons/fa";
 import { IoLogoInstagram } from "react-icons/io";
+import { mapStateToProps } from ".";
+import { connect } from "react-redux";
 
 const StyledContactBox = styled.div`
 	display: flex;
@@ -169,32 +171,34 @@ const StyledCompanyInfo = styled.div`
 
 `;
 
-export interface ContactPageProps {}
+export interface ContactPageProps {
+	isEnglish: boolean;
+}
  
-const ContactPage: React.SFC<ContactPageProps> = () => {
+const ContactPage: React.SFC<ContactPageProps> = ({isEnglish}) => {
   return ( 
     <>
-     	<Title>Kontakt</Title>
+     	<Title>{isEnglish ? "Contact" : "Kontakt"}</Title>
 		 	<StyledContactBox>
 				 
 				<StyledContact>
 					<StyledCompany>
-						<h3>siedziba:</h3>
-						<p>ul. Rezedowa 60</p>
-						<p>54-515 Wrocław</p>
-						<p>Polska</p>
-						<h3>KONTAKT:</h3>
+						<h3>{isEnglish ? "headquters" : "siedziba"}:</h3>
+						<p>{isEnglish ? "st. Rezedowa 60" : "ul. Rezedowa 60"}</p>
+						<p>{isEnglish ? "54-515 Wroclaw" : "54-515 Wrocław"}</p>
+						<p>{isEnglish ? "Poland" : "Polska"}</p>
+						<h3>{isEnglish ? "CONTACT" : "KONTAKT"}:</h3>
 						<p><a href="tel:601989908"><StyledImPhone/>+48 601 989 908</a></p>
 					</StyledCompany>
 					<StyledMedia>
-						<h3>znajdź nas:</h3>
+						<h3>{isEnglish ? "find us" : "znajdź nas"}:</h3>
 						<a href="https://www.facebook.com/GerrisUSV"><StyledIoLogoFacebook/></a>
 						<a href="https://www.instagram.com/gerris_usv/"><StyledIoLogoInstagram/></a>
 					</StyledMedia>
 				</StyledContact>
 				
 					<StyledCompanyInfo>
-						<h3>dane:</h3>
+						<h3>{isEnglish ? "info" : "dane"}:</h3>
 						<p>KRS: 0000862246</p>
 						<p>NIP: 8943159066</p>
 						<p>Regon: 38712781200000</p>
@@ -208,4 +212,4 @@ const ContactPage: React.SFC<ContactPageProps> = () => {
     </>
    );
 }
-export default ContactPage;
+export default connect(mapStateToProps)(ContactPage);

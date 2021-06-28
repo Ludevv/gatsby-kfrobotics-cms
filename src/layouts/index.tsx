@@ -3,6 +3,8 @@ import Footer from '../components/Footer';
 import Navigation from '../components/Navigation';
 import { GlobalStyle } from '../styles/globalStyles';
 import styled from 'styled-components';
+import { Provider } from 'react-redux';
+import store from '../store';
 
 
 const Wrapper = styled.div`
@@ -38,14 +40,14 @@ const Wrapper = styled.div`
 `;
 
 const MainLayout = ({children}) => (
-  <>
+  <Provider store={store}>
     <GlobalStyle/>
     <Navigation/>
     <Wrapper>
         {children}
     </Wrapper>
     <Footer/>
-  </>
+  </Provider>
 )
 
 export default MainLayout

@@ -4,6 +4,9 @@ import styled from "styled-components";
 import { FaCaretDown } from "react-icons/fa";
 import { AiOutlineAlignRight } from "react-icons/ai";
 import { useEffect, useState } from "react";
+import { mapStateToProps } from "../pages";
+import { connect } from "react-redux";
+import { changeLanguage } from "../actions";
 
 
 export interface NavProps {
@@ -118,7 +121,7 @@ const StyledGerris = styled.div`
 	position: absolute;
 	top: 60px;
 	right: 0;
-	width: 170%;
+	width: 250%;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-end;
@@ -222,9 +225,18 @@ const StyledImage = styled.div`
 	background-color: ${(props: NavProps) => props.background ? "black" : "gold"};
 `;
 
-export interface NavigationProps {}
- 
-const Navigation: React.SFC<NavigationProps> = () => {
+export interface NavigationProps {
+	isEnglish: boolean;
+	handleChangeLanguage: (value: boolean) => boolean; 
+}
+
+
+const mapDispatchToProps = dispatch => ({
+	handleChangeLanguage: (value) => dispatch(changeLanguage(value))
+})
+
+
+const Navigation: React.SFC<NavigationProps> = ({isEnglish, handleChangeLanguage}) => {
 	const [showGerris, setShowGerris] = useState<Boolean>(false);
 	const [isMobile, setIsMobile] = useState<Boolean>(false);
 
@@ -262,17 +274,16 @@ const Navigation: React.SFC<NavigationProps> = () => {
 			<StyledComapnyName>K.F. Robotics</StyledComapnyName>
 			</StyledBoxLogo>
 		</StyledLink>
-
 		<StyledButtons>
 			<StyledLink to="/" onClick={handleHideOptions}>
-				<StyledButton>strona główna</StyledButton>
+				<StyledButton>{isEnglish ? "home" : "strona główna"}</StyledButton>
 			</StyledLink>
 
 			<StyledLink to="/articles" onClick={handleHideOptions}>
-				<StyledButton>artykuły</StyledButton>
+				<StyledButton>{isEnglish ? "news" : "artykuły"}</StyledButton>
 			</StyledLink>
 
-			<StyledDownButton onClick={handleShowOptions}><span>DZIAŁALNOŚĆ <StyledFaCaretDown/></span>
+			<StyledDownButton onClick={handleShowOptions}><span>{isEnglish ? "PROJECTS" : "DZIAŁANOŚĆ"} <StyledFaCaretDown/></span>
 				{showGerris && <StyledGerris>
 					<StyledLink to="/gerris-asv" >gerris asv</StyledLink>
 					<StyledLink to="/gerris-asv-surveyor" >gerris asv surveyor</StyledLink>
@@ -282,18 +293,20 @@ const Navigation: React.SFC<NavigationProps> = () => {
 			</StyledDownButton>
 
 			<StyledLink to="/contact" onClick={handleHideOptions}>
-				<StyledOrderButton>zamów</StyledOrderButton>
+				<StyledOrderButton>{isEnglish ? "order" : "zamów"}</StyledOrderButton>
 			</StyledLink>
+		<button onClick={() => handleChangeLanguage(isEnglish)}>język</button>
+
 		</StyledButtons>
 		<StyledMobileMenu onClick={handleMobileMenu}/>
 
 		{isMobile && <StyledMobileNav>
 			<StyledLink to="/" onClick={handleHideMobileMenu}>
-				<StyledButton>strona główna</StyledButton>
+				<StyledButton>{isEnglish ? "home" : "strona główna"}</StyledButton>
 			</StyledLink>
 
 			<StyledLink to="/articles" onClick={handleHideMobileMenu}>
-				<StyledButton>artykuły</StyledButton>
+				<StyledButton>{isEnglish ? "news" : "artykuły"}</StyledButton>
 			</StyledLink>	
 
 			<StyledLink to="/gerris-asv" onClick={handleHideMobileMenu}>
@@ -309,11 +322,11 @@ const Navigation: React.SFC<NavigationProps> = () => {
 			</StyledLink>
 
 			<StyledLink to="/contact" onClick={handleHideMobileMenu}>
-				<StyledOrderButton>zamów</StyledOrderButton>
+				<StyledOrderButton>{isEnglish ? "order" : "zamów"}</StyledOrderButton>
 			</StyledLink>
 		</StyledMobileNav>}
     </StyledNavigationBar>
    );
 }
 
-export default Navigation;
+export default connect(mapStateToProps, mapDispatchToProps)(Navigation);

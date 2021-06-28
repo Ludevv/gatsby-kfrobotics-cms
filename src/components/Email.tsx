@@ -4,6 +4,8 @@ import { useForm, ValidationError } from '@formspree/react';
 import styled from 'styled-components';
 import { BiCheckDouble } from "react-icons/bi";
 import { useState } from 'react';
+import { mapStateToProps } from '../pages';
+import { connect } from 'react-redux';
 
 const StyledButtonBox = styled.div`
     display: flex;
@@ -31,7 +33,7 @@ const StyledValidationError = styled(ValidationError)`
     font-style: italic;
 `;
 
-export const Email = () => {
+const Email = ({isEnglish}) => {
     const [state, handleSubmit] = useForm("mayabqql");
     const [name, setName] = useState("");
     const [phone, setPhone] = useState("");
@@ -49,7 +51,7 @@ export const Email = () => {
                     onChange={(e)=> setName(e.target.value)}
                     value={state.succeeded ? "" : name}
                 />
-                <label htmlFor="name">Imię i nazwisko</label>
+                <label htmlFor="name">{isEnglish ? "Name" : "Imię i nazwisko"}</label>
                 <div className="forms__item__bar" />
             </div>
             <div className="form__item">
@@ -61,7 +63,7 @@ export const Email = () => {
                     onChange={(e)=> setPhone(e.target.value)}
                     value={state.succeeded ? "" : phone}
                 />
-                <label htmlFor="phone">Numer telefonu</label>
+                <label htmlFor="phone">{isEnglish ? "Phone Number" : "Numer telefonu"}</label>
                 <div className="forms__item__bar" />
             </div>
             <StyledValidationError 
@@ -78,7 +80,7 @@ export const Email = () => {
                     value={state.succeeded ? "" : email}
                 />
         
-                <label htmlFor="email">Adres e-mail</label>
+                <label htmlFor="email">{isEnglish ? "Adress e-mail" : "Adres e-mail"}</label>
                 <div className="forms__item__bar" />
             </div>
             <div className="form__item">
@@ -89,14 +91,16 @@ export const Email = () => {
                     onChange={(e) => setText(e.target.value)}
                     value={state.succeeded ? "" : text}
                     />
-                <label htmlFor="description">Wiadomość</label>
+                <label htmlFor="description">{isEnglish ? "Message" : "Wiadomość"}</label>
                 <div className="forms__item__bar" />
             </div>
             <StyledButtonBox>
-                <button className="form__button" type="submit" disabled={state.submitting}>Wyślij</button>
-                {state.succeeded && <StyledMessage><StyledBiCheckDouble/>wysłano</StyledMessage>}
+                <button className="form__button" type="submit" disabled={state.submitting}>{isEnglish ? "Send" : "Wyślij"}</button>
+                {state.succeeded && <StyledMessage><StyledBiCheckDouble/>{isEnglish ? "sent" : "wysłano"}</StyledMessage>}
             </StyledButtonBox>
         </form>
     )}
+
+export default connect(mapStateToProps)(Email)
 
 

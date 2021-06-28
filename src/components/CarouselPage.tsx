@@ -6,7 +6,12 @@ import { Link } from "gatsby";
 import carusel1 from '../images/carusel1.jpg';
 import carusel2 from '../images/carusel2.jpg';
 import carusel3 from '../images/carusel3.jpg';
+import { connect } from "react-redux";
 
+const mapStateToProps = (state) => {
+	const { isEnglish } = state;
+	return { isEnglish } 
+}
 
 const StyledMDBContainer = styled(MDBContainer)`
 margin-bottom: 170px;
@@ -49,12 +54,10 @@ const StyledDescription = styled.p`
       margin-bottom: 0;
       padding-right: 5px;
       padding-left: 5px;
-      }
-
-	}
+    }
 `;
 
-const CarouselPage = () => {
+const CarouselPage = ({isEnglish}) => {
   return (
     <StyledMDBContainer>
       <MDBCarousel
@@ -76,7 +79,13 @@ const CarouselPage = () => {
           </MDBView>
           <StyledMDBCarouselCaption>
             <h3 className="h3-responsive"><Link to="/gerris-asv" ><StyledName>GERRIS ASV</StyledName></Link></h3>
-            <StyledDescription>Uniwersalny bezzałogowy katamaran z funkcją autopilota.</StyledDescription>
+            <StyledDescription>
+                {isEnglish 
+                ? 
+                "A universal unmanned catamaran with an autopilot function." 
+                : 
+                "Uniwersalny bezzałogowy katamaran z funkcją autopilota."}
+            </StyledDescription>
           </StyledMDBCarouselCaption>
         </MDBCarouselItem>
         <MDBCarouselItem itemId="2">
@@ -90,7 +99,13 @@ const CarouselPage = () => {
           </MDBView>
           <StyledMDBCarouselCaption>
             <h3 className="h3-responsive"><Link to="/gerris-1100-asv" ><StyledName>GERRIS 1100 ASV</StyledName></Link></h3>
-            <StyledDescription>Nowoczesny bezzałogowy katamaran z funkcją autopilota.</StyledDescription>
+            <StyledDescription>
+              {isEnglish 
+              ? 
+              "A modern unmanned catamaran with an autopilot function (under testing)." 
+              : 
+              "Nowoczesny bezzałogowy katamaran z funkcją autopilota."}
+            </StyledDescription>
           </StyledMDBCarouselCaption>
         </MDBCarouselItem>
         <MDBCarouselItem itemId="3">
@@ -104,7 +119,13 @@ const CarouselPage = () => {
           </MDBView>
           <StyledMDBCarouselCaption>
             <h3 className="h3-responsive"><Link to="/gerris-asv-surveyor" ><StyledName>GERRIS ASV Surveyor</StyledName></Link></h3>
-            <StyledDescription>Zintegrowany system do pomiarów batymetrycznych.</StyledDescription>
+            <StyledDescription>
+              {isEnglish 
+              ? 
+              "Integrated system for bathymetric measurements." 
+              : 
+              "Zintegrowany system do pomiarów batymetrycznych."}
+            </StyledDescription>
           </StyledMDBCarouselCaption>
         </MDBCarouselItem>
       </MDBCarouselInner>
@@ -113,4 +134,4 @@ const CarouselPage = () => {
   );
 }
 
-export default CarouselPage;
+export default connect(mapStateToProps)(CarouselPage);

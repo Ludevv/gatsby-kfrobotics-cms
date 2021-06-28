@@ -1,10 +1,17 @@
 import { Link } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 import * as React from 'react';
+import { connect } from 'react-redux';
 import styled from 'styled-components';
 
-export interface HeaderProps {}
+type HeaderProps = {
+	isEnglish: boolean;
+}
 
+const mapStateToProps = (state) => {
+	const { isEnglish } = state;
+	return { isEnglish } 
+}
 
 const StyledMain = styled.main`
 	height: 80vh;
@@ -91,7 +98,7 @@ const StyledLink = styled(Link)`
 	}
 `;
  
-const Header: React.SFC<HeaderProps> = ({children}) => {
+const Header: React.SFC<HeaderProps> = ({isEnglish}) => {
 
   return ( 
 
@@ -107,8 +114,13 @@ const Header: React.SFC<HeaderProps> = ({children}) => {
 		/>
 		<StyledName>
 			K.F. Robotics
-			<p>Projektujemy i wykonujemy <b>dedykowane</b> rozwiązania inżynierskie, kompleksowo obsługując zlecenia naszych Klientów.</p>
-			<StyledLink to="/contact">ZAMÓW</StyledLink>
+			<p>{isEnglish 
+			? 
+			"We design and manufacture dedicated engineering solutions, comprehensively handling our clients' orders." 
+			: 
+			"Projektujemy i wykonujemy dedykowane rozwiązania inżynierskie, kompleksowo obsługując zlecenia naszych Klientów."}
+			</p>
+			<StyledLink to="/contact">{isEnglish ? "ORDER" : "ZAMÓW"}</StyledLink>
 		</StyledName>
 	
 	</StyledMain>
@@ -116,4 +128,4 @@ const Header: React.SFC<HeaderProps> = ({children}) => {
    );
 }
  
-export default Header;
+export default connect(mapStateToProps)(Header);

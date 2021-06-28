@@ -7,6 +7,8 @@ import { ImPhone } from "react-icons/im";
 import { FaFacebook } from "react-icons/fa";
 import { IoLogoInstagram } from "react-icons/io";
 import { MdKeyboardArrowRight } from "react-icons/md";
+import { mapStateToProps } from '../pages';
+import { connect } from 'react-redux';
 
 
 const AboutBox = styled.div`
@@ -276,9 +278,11 @@ const FooterBox = styled.div`
 `;
 
 
-export interface FooterProps {}
+export interface FooterProps {
+	isEnglish: boolean;
+}
  
-const Footer: React.SFC<FooterProps> = () => {
+const Footer: React.SFC<FooterProps> = ({isEnglish}) => {
 
   const year = new Date().getFullYear();
 
@@ -286,26 +290,26 @@ const Footer: React.SFC<FooterProps> = () => {
     <>
       <AboutBox>
 		 <StyledCompany>
-			 <h3>siedziba:</h3>
-			 <p>ul. Rezedowa 60</p>
-			 <p>54-515 Wrocław</p>
-			 <p>Polska</p>
-			 <p>Numer telefonu:</p>
+			 <h3>{isEnglish ? "headquters" : "siedziba"}:</h3>
+			 <p>{isEnglish ? "st. Rezedowa 60" : "ul. Rezedowa 60"}</p>
+			 <p>{isEnglish ? "54-515 Wroclaw" : "54-515 Wrocław"}</p>
+			 <p>{isEnglish ? "Poland" : "Polska"}</p>
+			 <p>{isEnglish ? "Phone number" : "Numer telefonu"}:</p>
 			 <p><a href="tel:601989908"><StyledImPhone/>+48 601 989 908</a></p>
 		 </StyledCompany>
 		 <StyledMedia>
-			 <h3>znajdź nas:</h3>
+			 <h3>{isEnglish ? "find us" : "znajdź nas"}:</h3>
 			 <a href="https://www.facebook.com/GerrisUSV"><StyledIoLogoFacebook/></a>
 			 <a href="https://www.instagram.com/gerris_usv/"><StyledIoLogoInstagram/></a>
 		 </StyledMedia>
 		 <StyledSiteMap>
-			 <h3>na skróty:</h3>
-			 <StyledLink to="/"><p><StyledMdKeyboardArrowRight/> Strona Główna</p></StyledLink>
-			 <StyledLink to="/articles"><p><StyledMdKeyboardArrowRight/> Artykuły</p></StyledLink>
+			 <h3>{isEnglish ? "site map" : "na skróty"}:</h3>
+			 <StyledLink to="/"><p><StyledMdKeyboardArrowRight/> {isEnglish ? "Home" : "Strona Główna"}</p></StyledLink>
+			 <StyledLink to="/articles"><p><StyledMdKeyboardArrowRight/> {isEnglish ? "News" : "Artykuły"}</p></StyledLink>
 			 <StyledLink to="/gerris-asv"><p><StyledMdKeyboardArrowRight/> Gerris ASV</p></StyledLink>
 			 <StyledLink to="/gerris-asv-surveyor"><p><StyledMdKeyboardArrowRight/> Gerris ASV Surveyor</p></StyledLink>
 			 <StyledLink to="/gerris-1100-asv"><p><StyledMdKeyboardArrowRight/> Gerris 1100 ASV</p></StyledLink>
-			 <StyledLink to="/contact"><p><StyledMdKeyboardArrowRight/> Kontakt</p></StyledLink>
+			 <StyledLink to="/contact"><p><StyledMdKeyboardArrowRight/> {isEnglish ? "Contact" : "Kontakt"}</p></StyledLink>
 		 </StyledSiteMap>
 		 <StyledLogo><h1><StyledCircle/>K.F.&nbsp;Robotics</h1></StyledLogo>
 
@@ -313,10 +317,10 @@ const Footer: React.SFC<FooterProps> = () => {
 			
 	  </AboutBox>
     <FooterBox>
-        <span>© 2020 - {year} K.F. Robotics Sp. z o.o. Wszelkie Prawa Zastrzeżone</span>
+        <span>© 2020 - {year} K.F. Robotics Sp. z o.o. {isEnglish ? "All Rights Reserved" : "Wszelkie Prawa Zastrzeżone"}</span>
     </FooterBox>
     </>
    );
 }
  
-export default Footer;
+export default connect(mapStateToProps)(Footer);

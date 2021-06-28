@@ -3,6 +3,8 @@ import * as React from "react";
 import styled from "styled-components";
 import Title from "../components/Title";
 import { ImQuotesLeft } from "react-icons/im";
+import { connect } from "react-redux";
+import { mapStateToProps } from ".";
 
 export const query = graphql`
 query MyQuery {
@@ -93,11 +95,12 @@ const StyledImQuotesLeft = styled(ImQuotesLeft)`
 
 export interface ArticlesPageProps {
   data: any
+  isEnglish: boolean;
 }
  
-const ArticlesPage: React.SFC<ArticlesPageProps> = ({data}) => {
+const ArticlesPage: React.SFC<ArticlesPageProps> = ({isEnglish, data}) => {
 
-    const eng = false;
+  console.log(isEnglish)
 
     const polishArticles =  data.allDatoCmsArticle.nodes.map(article => {
 		if(!article.english) {
@@ -116,7 +119,7 @@ const ArticlesPage: React.SFC<ArticlesPageProps> = ({data}) => {
     });
 
     const englishArticles = data.allDatoCmsArticle.nodes.map(article => {
-		if(!article.english) {
+		if(article.english) {
 			return(
 				<StyledArticleBox>
 				<StyledArticleTitleMobile><StyledImQuotesLeft/>{article.title}</StyledArticleTitleMobile>
@@ -134,10 +137,10 @@ const ArticlesPage: React.SFC<ArticlesPageProps> = ({data}) => {
   return ( 
     <StyledContent>
 		<Title>Artykuły</Title>
-		{!eng && polishArticles}
-		{eng && englishArticles}
+		{!isEnglish && polishArticles}
+		{isEnglish && englishArticles}
     </StyledContent>
    );
 }
 
-export default ArticlesPage;
+export default connect(mapStateToProps)(ArticlesPage);

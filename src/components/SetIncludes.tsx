@@ -1,7 +1,11 @@
 import * as React from 'react';
+import { connect } from 'react-redux';
 import styled from 'styled-components';
+import { mapStateToProps } from '../pages';
 
-export interface SetIncludesProps {}
+export interface SetIncludesProps {
+    isEnglish: boolean;
+}
 
 const StyledBackground = styled.div`
     position: relative;
@@ -158,38 +162,41 @@ const StyledOptionas = styled.div`
 `;
 
  
-const SetIncludes: React.SFC<SetIncludesProps> = () => {
+const SetIncludes: React.SFC<SetIncludesProps> = ({isEnglish}) => {
     return ( 
         <StyledBackground>
             <StyledLeft/>
             <StyledRight/>
             <StyledSet>
-                <p>Zestaw zawiera:</p>
-                <ul>
-                    <li>zdalnie sterowaną jednostkę typu katamaran</li>
-                    <li>autopilot z telemetrią</li>
-                    <li>kontroler z drążkami do sterowania ręcznego</li>
-                    <li>zestaw akumulatorów napędowych 36Ah</li>
-                    <li>skrzynie transportowe</li>
-                    <li>dwie ładowarki 10A do akumulatorów</li>
-                    <li>ładowarka 2A kontrolera sterującego</li>
-                    <li>uchwyt echosondę i odbiornik GNSS</li>
-                    <li>narzędzia do obsługi</li>
-                </ul>
+             <p>{!isEnglish ? "Zestaw zawiera" : "Set contains"}</p>
+            <ul>
+                <li>{!isEnglish ? "zdalnie sterowaną jednostkę typu katamaran" : "catamaran"}</li>
+                <li>{!isEnglish ? "autopilot z telemetrią" : "autopilot with telemetry"}</li>
+                <li>{!isEnglish ? "kontroler z drążkami do sterowania ręcznego" : "controller for manual control"}</li>
+                <li>{!isEnglish ? "zestaw akumulatorów napędowych 36Ah (2h pływania @1,2m/s)" : "36Ah drive battery set (2h of swimming @ 1.2m / s)"}</li>
+                <li>{!isEnglish ? "skrzynie transportowe" : "transport crates"}</li>
+                <li>{!isEnglish ? "dwie ładowarki 10A do akumulatorów napędowych" : "two 10A chargers for driving batteries"}</li>
+                <li>{!isEnglish ? "ładowarka 2A kontrolera sterującego" : "control controller 2A charger"}</li>
+                <li>{!isEnglish ? "uchwyt echosondę i odbiornik GNSS" : "sonar holder and GNSS receiver"}</li>
+                <li>{!isEnglish ? "narzędzia do obsługi" : "maintenance tools"}</li>
+            </ul>
             </StyledSet>
             <StyledOptionas>
-                <p>Dodatkowe opcjonalne wyposażenie:</p>
+                <p>{!isEnglish ? "Dodatkowe opcjonalne wyposażenie:" : "Additional optional equipment:"}</p>
                 <ul>
-                    <li>system wizyjny</li>
-                    <li>komputer pokładowy ze stacją naziemną</li>
-                    <li>GPS RTK</li>
-                    <li>echosonda</li>
-                    <li>system omijania przeszkód</li>
-                    <li>system komunikcji GSM</li>
+                    <li>{!isEnglish ? "system wizyjny" : "vision system"}</li>
+                    <li>{!isEnglish ? 
+                    "komputer pokładowy z komunikacją ze stacją naziemną" 
+                    : 
+                    "on-board computer communication with the ground station"}</li>
+                    <li>{!isEnglish ? "GPS RTK" : "GPS RTK"}</li>
+                    <li>{!isEnglish ? "echosonda" : "echosounder"}</li>
+                    <li>{!isEnglish ? "system omijania przeszkód" : "obstacle avoidance system"}</li>
+                    <li>{!isEnglish ? "system komunikcji GSM" : "GSM communication system"}</li>
                 </ul>
             </StyledOptionas>
         </StyledBackground>
      );
 }
  
-export default SetIncludes;
+export default connect(mapStateToProps)(SetIncludes);
