@@ -173,9 +173,9 @@ const SetIncludes: React.SFC<SetIncludesProps> = ({isEnglish}) => {
                 <li>{!isEnglish ? "zdalnie sterowaną jednostkę typu katamaran" : "catamaran"}</li>
                 <li>{!isEnglish ? "autopilot z telemetrią" : "autopilot with telemetry"}</li>
                 <li>{!isEnglish ? "kontroler z drążkami do sterowania ręcznego" : "controller for manual control"}</li>
-                <li>{!isEnglish ? "zestaw akumulatorów napędowych 36Ah (2h pływania @1,2m/s)" : "36Ah drive battery set (2h of swimming @ 1.2m / s)"}</li>
+                <li>{!isEnglish ? "zestaw akumulatorów napędowych 36Ah" : "36Ah drive battery set"}</li>
                 <li>{!isEnglish ? "skrzynie transportowe" : "transport crates"}</li>
-                <li>{!isEnglish ? "dwie ładowarki 10A do akumulatorów napędowych" : "two 10A chargers for driving batteries"}</li>
+                <li>{!isEnglish ? "dwie ładowarki 10A do akumulatorów" : "two 10A chargers batteries"}</li>
                 <li>{!isEnglish ? "ładowarka 2A kontrolera sterującego" : "control controller 2A charger"}</li>
                 <li>{!isEnglish ? "uchwyt echosondę i odbiornik GNSS" : "sonar holder and GNSS receiver"}</li>
                 <li>{!isEnglish ? "narzędzia do obsługi" : "maintenance tools"}</li>
@@ -186,9 +186,9 @@ const SetIncludes: React.SFC<SetIncludesProps> = ({isEnglish}) => {
                 <ul>
                     <li>{!isEnglish ? "system wizyjny" : "vision system"}</li>
                     <li>{!isEnglish ? 
-                    "komputer pokładowy z komunikacją ze stacją naziemną" 
+                    "komputer z komunikacją ze stacją naziemną" 
                     : 
-                    "on-board computer communication with the ground station"}</li>
+                    "on-board computer communication"}</li>
                     <li>{!isEnglish ? "GPS RTK" : "GPS RTK"}</li>
                     <li>{!isEnglish ? "echosonda" : "echosounder"}</li>
                     <li>{!isEnglish ? "system omijania przeszkód" : "obstacle avoidance system"}</li>

@@ -53,6 +53,9 @@ const StyledTextOdd = styled.p`
         padding-right: 0;
         margin: 30px 0 0;
 	}
+      @media (max-width: 500px) {
+        font-size: 18px;
+	}
 `;
 
 const StyledBackgroundOdd = styled.div`
@@ -123,9 +126,12 @@ const StyledTextEven = styled.p`
     line-height: 1.8;
 
     @media (max-width: 760px) {
-		width: 100%;
+		    width: 100%;
         padding-left: 0;
         margin-top: 30px;
+	}
+    @media (max-width: 500px) {
+        font-size: 18px;
 	}
 `;
 

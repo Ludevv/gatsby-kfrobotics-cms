@@ -4,6 +4,7 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 
+
 type HeaderProps = {
 	isEnglish: boolean;
 }
@@ -60,11 +61,14 @@ const StyledName = styled.h1`
 		font-weight: 200;
 		margin: 45px 0 60px;
 
+
 			
 		@media (max-width: 1235px) {
 			width: 100%;
 			text-align: left;
 		}
+
+
 	}
 
 	
