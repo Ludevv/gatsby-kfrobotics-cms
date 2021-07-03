@@ -117,7 +117,7 @@ const Table: React.SFC<TableProps> = ({isEnglish, row1, row2, row3, row4, row5, 
         <StyledTable>
           <StyledRow>
             <StyledHeaderColumnName>{!isEnglish ? "Parametr:" : "Parameter:"}</StyledHeaderColumnName>
-            <StyledHeaderColumnValue>{!isEnglish ? "Value:" : "Wartość:"}</StyledHeaderColumnValue>
+            <StyledHeaderColumnValue>{!isEnglish ? "Wartość:" : "Value:"}</StyledHeaderColumnValue>
           </StyledRow>
           <StyledRow>
             <StyledColumnName>{!isEnglish ? "Długość" : "Length"}</StyledColumnName>

@@ -5,9 +5,9 @@ import Gerris from "../components/Gerris";
 import SetIncludes from "../components/SetIncludes";
 import Table from "../components/Table";
 import { StyledWrapImg } from "./gerris-asv";
-import gerrisOneImg from '../images/g2one.jpg';
-import gerrisTwoImg from '../images/g2two.jpg';
-import gerrisThreeImg from '../images/g2three.jpg';
+import gerrisOneImg from '../images/g3one.jpg';
+import gerrisTwoImg from '../images/g3two.jpg';
+import gerrisThreeImg from '../images/g3three.jpg';
 import { mapStateToProps } from ".";
 import { connect } from "react-redux";
 

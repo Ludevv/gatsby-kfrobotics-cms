@@ -40,7 +40,7 @@ const StyledBoxLogo = styled.div`
 	margin-left: 85px;
 	margin-top: 0;
 
-	@media (max-width: 1235px) {
+	@media (max-width: 1300px) {
 		margin-left: 35px;
   	}
 	@media (max-width: 500px) {
@@ -71,7 +71,7 @@ const StyledButtons = styled.div`
 	align-items: center;
 	margin-right: 85px;
 
-	@media (max-width: 1235px) {
+	@media (max-width: 1300px) {
 		display: none;
   }
 `;
@@ -86,7 +86,7 @@ const StyledButton = styled.span`
 		color: gold;
 	}
 
-	@media (max-width: 1235px) {
+	@media (max-width: 1300px) {
 		display: block;
 		text-align: center;
 		margin: 0;
@@ -159,7 +159,7 @@ const StyledOrderButton = styled.span`
 		background-color: gold;
 	}
 
-	@media (max-width: 1235px) {
+	@media (max-width: 1300px) {
 		display: block;
 		margin: 0 30%;
 		text-align: center;
@@ -195,7 +195,7 @@ const StyledMobileMenu = styled(AiOutlineAlignRight)`
 	font-size: 40px;
 	cursor: pointer;
 
-	@media (min-width: 1235px) {
+	@media (min-width: 1300px) {
 		display: none;
   	}
 	@media (max-width: 500px) {
@@ -213,7 +213,7 @@ const StyledMobileNav = styled.div`
 	background-color: gold;
 	z-index: 10;
 
-	@media (min-width: 1235px) {
+	@media (min-width: 1300px) {
 		display: none;
   	}
 `;
@@ -286,7 +286,7 @@ const Navigation: React.SFC<NavigationProps> = ({isEnglish, handleChangeLanguage
 
 	useEffect(()=>{
 		function updateSize() {
-			if(window.innerWidth > 1235) {
+			if(window.innerWidth > 1300) {
 				setIsMobile(false);
 			}
     	}

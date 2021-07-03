@@ -65,6 +65,10 @@ const StyledArticleTitleMobile = styled.h3`
 const StyledArticleContent = styled.p`
     
 `;
+
+const StyledDiv = styled.div`
+  width: 100%;
+`;
 const StyledArticleDate = styled.p`
    color: grey;
    text-align: right;
@@ -100,19 +104,17 @@ export interface ArticlesPageProps {
  
 const ArticlesPage: React.SFC<ArticlesPageProps> = ({isEnglish, data}) => {
 
-  console.log(isEnglish)
-
     const polishArticles =  data.allDatoCmsArticle.nodes.map(article => {
 		if(!article.english) {
 			return(
 				<StyledArticleBox>
 				<StyledArticleTitleMobile><StyledImQuotesLeft/>{article.title}</StyledArticleTitleMobile>
 				{ article.photo && <StyledArticlePhoto src={article.photo.url}/> }
-				<div>
+				<StyledDiv>
 					<StyledArticleTitle><StyledImQuotesLeft/>{article.title}</StyledArticleTitle>
 					<StyledArticleContent>{article.content}</StyledArticleContent>
 					<StyledArticleDate>{article.date}</StyledArticleDate>
-				</div>
+				</StyledDiv>
 				<hr/>
 			</StyledArticleBox>)
 		}
