@@ -3,7 +3,6 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 import cookie from '../images/cookie.png';
-import { mapStateToProps } from '../pages';
 
 type CookiesProps = {
     isEnglish: boolean;
@@ -84,6 +83,11 @@ const StyledButton = styled.button`
         margin-top: 15px;
 	}
 `;
+
+const mapStateToProps = (state) => {
+	const { isEnglish } = state;
+	return { isEnglish } 
+}
 
 const Cookies: React.FC<CookiesProps> = ({isEnglish}) => {
     const [showCookies, setShowCookies] = React.useState(localStorage.getItem('Cookies'));
