@@ -90,7 +90,6 @@ export const mapStateToProps = (state) => {
 const IndexPage = ({isEnglish}) => {
   return (
     <>
-		<Cookies/>
 		<Header/>
         <Title>{isEnglish ? "About Us" : "O nas"}</Title>
     	<StyledAbout>
@@ -114,6 +113,7 @@ const IndexPage = ({isEnglish}) => {
 			</StyledBox>
     	</StyledAbout>
 		<CarouselPage/>
+		<Cookies/>
     </>
   );
 };
