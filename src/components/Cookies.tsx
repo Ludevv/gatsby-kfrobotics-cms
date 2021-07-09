@@ -90,13 +90,18 @@ const mapStateToProps = (state) => {
 }
 
 const Cookies: React.FC<CookiesProps> = ({isEnglish}) => {
-    const [showCookies, setShowCookies] = React.useState(window && localStorage.getItem('Cookies'));
+
+    const [showCookies, setShowCookies] = React.useState(undefined);
     const cookiesAccept = () => {
         if(window) {
             localStorage.setItem('Cookies', 'true');
             setShowCookies(localStorage.getItem('Cookies'))
         }
     }
+
+    React.useEffect(()=> {
+        setShowCookies(localStorage.getItem('Cookies'))
+    },[])
 
     return ( 
         <>
