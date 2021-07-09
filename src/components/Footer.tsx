@@ -305,7 +305,7 @@ const Footer: React.SFC<FooterProps> = ({isEnglish}) => {
 		 <StyledSiteMap>
 			 <h3>{isEnglish ? "site map" : "na skróty"}:</h3>
 			 <StyledLink to="/"><p><StyledMdKeyboardArrowRight/> {isEnglish ? "Home" : "Strona Główna"}</p></StyledLink>
-			 <StyledLink to="/articles"><p><StyledMdKeyboardArrowRight/> {isEnglish ? "News" : "Artykuły"}</p></StyledLink>
+			 <StyledLink to="/articles"><p><StyledMdKeyboardArrowRight/> {isEnglish ? "News" : "Aktualności"}</p></StyledLink>
 			 <StyledLink to="/gerris-asv"><p><StyledMdKeyboardArrowRight/> Gerris ASV</p></StyledLink>
 			 <StyledLink to="/gerris-asv-surveyor"><p><StyledMdKeyboardArrowRight/> Gerris ASV Surveyor</p></StyledLink>
 			 <StyledLink to="/gerris-1100-asv"><p><StyledMdKeyboardArrowRight/> Gerris 1100 ASV</p></StyledLink>

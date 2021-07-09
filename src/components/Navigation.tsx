@@ -308,7 +308,7 @@ const Navigation: React.SFC<NavigationProps> = ({isEnglish, handleChangeLanguage
 			</StyledLink>
 
 			<StyledLink to="/articles" onClick={handleHideOptions}>
-				<StyledButton>{isEnglish ? "news" : "artykuły"}</StyledButton>
+				<StyledButton>{isEnglish ? "news" : "aktualności"}</StyledButton>
 			</StyledLink>
 
 			<StyledDownButton onClick={handleShowOptions}><span>{isEnglish ? "PROJECTS" : "DZIAŁANOŚĆ"} <StyledFaCaretDown/></span>
@@ -339,7 +339,7 @@ const Navigation: React.SFC<NavigationProps> = ({isEnglish, handleChangeLanguage
 			</StyledLink>
 
 			<StyledLink to="/articles" onClick={handleHideMobileMenu}>
-				<StyledButton>{isEnglish ? "news" : "artykuły"}</StyledButton>
+				<StyledButton>{isEnglish ? "news" : "aktualności"}</StyledButton>
 			</StyledLink>	
 
 			<StyledLink to="/gerris-asv" onClick={handleHideMobileMenu}>

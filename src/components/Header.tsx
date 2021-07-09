@@ -19,7 +19,7 @@ const StyledMain = styled.main`
     display: flex;
 	flex-direction: row-reverse;
     justify-content: center;
-    margin: 100px 0 150px;
+    margin: 100px 0;
 
 	@media (max-width: 1235px) {
 		height: auto;

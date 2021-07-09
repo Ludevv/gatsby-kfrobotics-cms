@@ -138,7 +138,7 @@ const ArticlesPage: React.SFC<ArticlesPageProps> = ({isEnglish, data}) => {
 
   return ( 
     <StyledContent>
-		<Title>Artykuły</Title>
+		<Title>{isEnglish ? "News" : "Aktualności"}</Title>
 		{!isEnglish && polishArticles}
 		{isEnglish && englishArticles}
     </StyledContent>
