@@ -7,6 +7,7 @@ import { IoBulbSharp } from "react-icons/io5";
 import { RiMedal2Fill } from "react-icons/ri";
 import CarouselPage from "../components/CarouselPage";
 import { connect } from "react-redux";
+import Cookies from "../components/Cookies";
 
 
 const StyledAbout = styled.div`
@@ -89,6 +90,7 @@ export const mapStateToProps = (state) => {
 const IndexPage = ({isEnglish}) => {
   return (
     <>
+		<Cookies/>
 		<Header/>
         <Title>{isEnglish ? "About Us" : "O nas"}</Title>
     	<StyledAbout>

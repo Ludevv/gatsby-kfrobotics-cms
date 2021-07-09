@@ -158,7 +158,7 @@ const StyledBackgroundEven = styled.div`
         width: 100%;
         z-index: 1;
         backdrop-filter: blur(5px);
-        -webkit-backdrop-filter: blur(5px)
+        -webkit-backdrop-filter: blur(5px);
    }
 `;
 const StyledImageEven = styled.div`
